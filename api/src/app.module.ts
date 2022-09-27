@@ -4,6 +4,10 @@ import { ConfigService } from '@nestjs/config/dist';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { VehicleModule } from './vehicle/vehicle.module';
+import { RentingModule } from './renting/renting.module';
+import { CustomerModule } from './customer/customer.module';
+
 
 @Module({
   imports: [
@@ -17,11 +21,14 @@ import { AppService } from './app.service';
         port: parseInt(configService.get('DATABASE_PORT')),
         username: configService.get('DATABASE_USERNAME'),
         password: configService.get('DATABASE_PASSWORD'),
-        entities: ['dist/**/*.model.js'],
-        // TODO: passer le synchronize en false en mode production
+        database: configService.get('DATABASE_DB'),
+        autoLoadEntities: true,
         synchronize: true
       })
-    })
+    }),
+    VehicleModule,
+    RentingModule,
+    CustomerModule
   ],
   controllers: [AppController],
   providers: [AppService],
