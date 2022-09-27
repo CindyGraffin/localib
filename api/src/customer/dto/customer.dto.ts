@@ -1,3 +1,5 @@
+import { PartialType } from '@nestjs/mapped-types';
+
 export class CustomerDto {
     id: string;
     firstName: string;
@@ -9,4 +11,4 @@ export class CustomerDto {
 
 export interface CreateCustomerDto extends Omit<CustomerDto, 'id'> {}
 
-export class UpdateCustomerDto extends CustomerDto {}
+export class UpdateCustomerDto extends PartialType(CustomerDto) {}

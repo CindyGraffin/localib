@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateVehicleDto } from './dtos/vehicule.dto';
+import { CreateVehicleDto, VehicleDto } from './dtos/vehicule.dto';
 import { UpdateVehicleDto } from './dtos/vehicule.dto';
 import { Vehicle } from './entities/vehicle.entity';
 
@@ -13,20 +13,20 @@ export class VehicleService {
     private readonly vehicleRepository: Repository<Vehicle>
   ) {}
 
-  async createVehicle(newVehicle: CreateVehicleDto): Promise<Vehicle> {
+  async createVehicle(newVehicle: CreateVehicleDto): Promise<VehicleDto> {
     const createdVehicle = this.vehicleRepository.create(newVehicle);
     const vehicle = await this.vehicleRepository.save(createdVehicle);
     return vehicle;
   }
 
-  async findAll() {
+  async findAll(): Promise<VehicleDto[]> {
     const vehicles = await this.vehicleRepository.find();
     return vehicles;
   }
 
-  async findById(vehicleId: Vehicle['id']) {
+  async findById(vehicleId: Vehicle['id']): Promise<Vehicle> {
     const vehicle = await this.vehicleRepository.findOneOrFail({
-        where: { id: vehicleId },
+        where: { id: vehicleId }, 
     });
     return vehicle;
   }
@@ -34,7 +34,7 @@ export class VehicleService {
   async updateById(
     vehicleId: Vehicle['id'],
     updatedVehicule: UpdateVehicleDto,
-  ): Promise<any> {
+  ): Promise<UpdateVehicleDto> {
     const vehicle: Vehicle = await this.vehicleRepository.findOneOrFail({
       where: { id: vehicleId },
     });
@@ -48,7 +48,7 @@ export class VehicleService {
     return vehicle;
   }
 
-  async deleteById(vehicleId: string) {
+  async deleteById(vehicleId: string): Promise<void> {
     const vehicle = await this.vehicleRepository.findOneOrFail({
       where: { id: vehicleId },
     });

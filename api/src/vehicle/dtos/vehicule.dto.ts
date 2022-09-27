@@ -1,3 +1,4 @@
+import { PartialType } from '@nestjs/mapped-types';
 import { VehicleState, VehicleType } from "../types/VehiculeTypes";
 
 export class VehicleDto {
@@ -13,4 +14,6 @@ export class VehicleDto {
 
 export interface CreateVehicleDto extends Omit<VehicleDto, 'id'> {}
 
-export interface UpdateVehicleDto extends Omit<VehicleDto, 'id'> {}
+export class UpdateVehicleDto extends PartialType(VehicleDto) {}
+
+

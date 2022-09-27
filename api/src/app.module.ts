@@ -8,7 +8,6 @@ import { VehicleModule } from './vehicle/vehicle.module';
 import { RentingModule } from './renting/renting.module';
 import { CustomerModule } from './customer/customer.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -24,7 +23,7 @@ import { CustomerModule } from './customer/customer.module';
         database: configService.get('DATABASE_DB'),
         autoLoadEntities: true,
         synchronize: true
-      })
+      }) 
     }),
     VehicleModule,
     RentingModule,

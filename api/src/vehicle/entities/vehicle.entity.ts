@@ -34,4 +34,7 @@ export class Vehicle {
     
     @UpdateDateColumn()
     updatedAt: Date
+
+    @OneToMany(() => Renting, (renting) => renting.id)
+    rentings: Renting[]
 }
