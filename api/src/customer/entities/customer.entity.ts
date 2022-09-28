@@ -1,5 +1,6 @@
 import { Renting } from 'src/renting/entities/renting.entity';
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn,  UpdateDateColumn} from 'typeorm';
+import { GenderType } from '../types/gender.type';
 
 @Entity()
 export class Customer {
@@ -12,6 +13,9 @@ export class Customer {
 
     @Column()
     lastName: string;
+
+    @Column()
+    gender: GenderType;
     
     @Column()
     dateOfBirth: Date;

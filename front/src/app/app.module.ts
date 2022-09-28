@@ -11,6 +11,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerCardComponent } from './features/customers/customer-card/customer-card.component';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { AddCustomerFormComponent } from './features/customers/add-customer-form/add-customer-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,15 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
     BlueLightButtonDirective,
     CustomerCardComponent,
     LayoutComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddCustomerFormComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
