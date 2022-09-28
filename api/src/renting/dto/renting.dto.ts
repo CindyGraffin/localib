@@ -18,5 +18,3 @@ export class CreateRentingDto extends RentingDto {
 
 export class UpdateRentingDto extends PartialType(CreateRentingDto) {}
 
-
- 

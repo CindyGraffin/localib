@@ -1,15 +1,3 @@
-:root {
-    --color-primary: #0E6DFC;
-    --color-primary-light: rgba(40, 126, 255, 0.925);
-    --color-secondary: #F7FAFE;
-    --color-secondary-light: #f7fafe8f;
-    --color-white: #FFFFFF;
-    --color-black: #131313;
-    --box-shadow-bold-button: rgba(0, 0, 0, 0.24) 0px 3px 4px;
-    --box-shadow-inset: rgba(50, 50, 93, 0.25) 0px 50px 50px -20px, 
-                        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
-                        rgba(10, 37, 64, 0.35) 0px -1px 6px 0px inset;
-}
 * {
     margin: 0;
     padding: 0;
@@ -17,3 +5,19 @@
     border: none;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+:root {
+    --color-primary: #0E6DFC;
+    --color-primary-light: rgba(40, 126, 255, 0.925);
+    --color-secondary: #F7FAFE;
+    --color-secondary-light: #f7fafe8f;
+    --color-white: #FFFFFF;
+    --color-black: #131313;
+    --box-shadow-bold-card: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    --box-shadow-bold-button: rgba(0, 0, 0, 0.24) 0px 3px 4px;
+    --box-shadow-inset: rgba(50, 50, 93, 0.25) 0px 50px 50px -20px, 
+                        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+                        rgba(10, 37, 64, 0.35) 0px -1px 6px 0px inset;
+}
+
+

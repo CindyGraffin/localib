@@ -8,6 +8,7 @@ import { IconComponent } from './shared/icon/icon.component';
 import { ButtonShadowDirective } from './shared/button/directives/button-shadow.directive';
 import { BlueLightButtonDirective } from './shared/button/directives/blue-light-button.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CustomerCardComponent } from './features/customers/customer-card/customer-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BlueButtonDirective,
     IconComponent,
     ButtonShadowDirective,
-    BlueLightButtonDirective
+    BlueLightButtonDirective,
+    CustomerCardComponent
   ],
   imports: [
     BrowserModule,

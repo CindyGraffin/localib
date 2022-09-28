@@ -1,0 +1,33 @@
+<div class="customer-card__container">
+    <div class="customer-card-infos">
+        <div class="customer-name">
+            <p>Mme. <span>Graffin Cindy</span></p>
+        </div>
+        <div class="customer-info">
+            <app-icon class="customer-info-icon" [icon]="phoneIcon"></app-icon>
+            <p>06 49 60 72 21</p>
+        </div>
+        <div class="customer-info">
+            <app-icon class="customer-info-icon" [icon]="emailIcon"></app-icon>
+            graffincindy@gmail.com
+        </div>
+        <div class="customer-info">
+            <app-icon [icon]="birthdayIcon" class="customer-info-icon"></app-icon>
+            <p>Né le 10/01/1996</p>
+        </div>
+    </div>
+    <div class="customer-card-buttons">
+        <app-button 
+            [buttonText]="'Supprimer un locataire'" 
+            [buttonColor]="'light-blue'" 
+            [icon]="deleteIcon"
+            [buttonSize]="'large'" >
+        </app-button>
+        <app-button 
+            [buttonText]="'Modifier les informations'" 
+            [buttonColor]="'blue'" 
+            [icon]="editIcon" 
+            [buttonSize]="'large'">
+        </app-button>
+    </div>
+</div>

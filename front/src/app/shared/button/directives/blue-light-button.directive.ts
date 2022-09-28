@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[blueLightButton]'
+  selector: '[lightBlueButton]'
 })
 export class BlueLightButtonDirective {
   private initialBgColor: string = 'var(--color-secondary)'
