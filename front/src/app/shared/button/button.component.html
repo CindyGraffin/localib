@@ -1,1 +1,8 @@
-<button>button works!</button>
+<div class="button__container" >
+    <button *ngIf="buttonColor === 'blue'" class="button large" blueButton buttonShadow>
+        {{buttonText}}
+    </button>
+    <button *ngIf="buttonColor === 'light-blue'" class="button large" lightBlueButton buttonShadow>
+        {{buttonText}}
+    </button>
+</div>
