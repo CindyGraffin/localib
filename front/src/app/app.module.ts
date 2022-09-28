@@ -9,6 +9,8 @@ import { ButtonShadowDirective } from './shared/button/directives/button-shadow.
 import { BlueLightButtonDirective } from './shared/button/directives/blue-light-button.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerCardComponent } from './features/customers/customer-card/customer-card.component';
+import { LayoutComponent } from './layout/layout/layout.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CustomerCardComponent } from './features/customers/customer-card/custom
     IconComponent,
     ButtonShadowDirective,
     BlueLightButtonDirective,
-    CustomerCardComponent
+    CustomerCardComponent,
+    LayoutComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

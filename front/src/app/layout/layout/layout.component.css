@@ -1,0 +1,16 @@
+.layout__container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.layout-left {
+    flex: 1;
+    max-width: 20rem;
+    min-width: 13rem;
+    background-color: var(--color-white);
+}
+.layout-right {
+    flex: 4;
+    background-color: var(--color-secondary);
+}
