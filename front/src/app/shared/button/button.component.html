@@ -1,5 +1,6 @@
 <div class="button__container" >
     <button *ngIf="buttonColor === 'blue'" class="button large" blueButton buttonShadow>
+        <app-icon [icon]="icon"></app-icon>
         {{buttonText}}
     </button>
     <button *ngIf="buttonColor === 'light-blue'" class="button large" lightBlueButton buttonShadow>

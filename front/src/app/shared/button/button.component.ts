@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-button',
@@ -9,4 +10,5 @@ export class ButtonComponent  {
 
   @Input() buttonText!: string;
   @Input() buttonColor!: string;
+  @Input() icon!: IconProp;
 }

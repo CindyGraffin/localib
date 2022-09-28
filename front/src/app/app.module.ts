@@ -7,6 +7,7 @@ import { BlueButtonDirective } from './shared/button/directives/blue-button.dire
 import { IconComponent } from './shared/icon/icon.component';
 import { ButtonShadowDirective } from './shared/button/directives/button-shadow.directive';
 import { BlueLightButtonDirective } from './shared/button/directives/blue-light-button.directive';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BlueLightButtonDirective } from './shared/button/directives/blue-light-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
