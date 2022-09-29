@@ -13,7 +13,9 @@
     --color-secondary-light: #f7fafe8f;
     --color-white: #FFFFFF;
     --color-black: #131313;
-    --color-gray: rgb(218, 218, 218);
+    --color-gray-light: rgb(227, 227, 227);
+    --color-gray: #b7b7b7;
+    --color-gray-light: rgb(244, 244, 244);
     --box-shadow-bold-card: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     --box-shadow-bold-button: rgba(0, 0, 0, 0.24) 0px 3px 4px;
     --box-shadow-input: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, 
@@ -46,40 +48,6 @@
     overflow-y: scroll;
 }
 
-/* =========== FORM SUBMIT BUTTONS ============== */
-.button-submit__container {
-    height: fit-content;
-    width: fit-content;
-}
-.button-submit__container button {
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 700;
-    display: flex;
-    column-gap: 0.5rem;
-    width: 100%;
-    padding: 0.35rem 0.6rem;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    box-shadow: var(--box-shadow-bold-button);
-}
-
-.button-submit__container button:hover {
-    background-color: var(--color-primary-light);
-    color: var(--color-white);
-    box-shadow: var(--box-shadow-bold-button);
-}
-
-.button-submit__container button:active {
-    box-shadow: var(--box-shadow-inset);
-}
-
-.button-submit__container button:disabled {
-    box-shadow: var(--box-shadow-inset-light);
-    background-color: var(--color-gray);
-    cursor: not-allowed;
-}
-
 /* =============== SECTIONS  ============ */
 .section-title {
     font-size: 1.8rem;
@@ -96,6 +64,10 @@
     font-family: 'Exo';
 }
 /* ================ FORMS ============== */
+.form__container {
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+}
 .form-control {
     border-radius: 30px;
     padding: 0.3rem 0.6rem;
@@ -108,10 +80,6 @@
 .form-control:focus {
     outline: none;
     box-shadow: var(--box-shadow-input);
-}
-.form__container {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
 }
 .form-inputs {
     display: flex;
@@ -130,7 +98,6 @@
 .form-group.date .form-control {
     padding: 0.25rem 0.6rem;
 }
-
 .form-item {
     display: flex;
     flex-direction: column;
@@ -139,4 +106,36 @@
     margin-top: 1rem;
     display: flex;
     justify-content: flex-end;
+}
+
+/* =========== FORM SUBMIT BUTTONS ============== */
+.button-submit__container {
+    height: fit-content;
+    width: fit-content;
+}
+.button-submit__container button {
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    column-gap: 0.5rem;
+    width: 100%;
+    padding: 0.35rem 0.6rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--box-shadow-bold-button);
+}
+.button-submit__container button:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    box-shadow: var(--box-shadow-bold-button);
+}
+.button-submit__container button:active {
+    box-shadow: var(--box-shadow-inset);
+}
+.button-submit__container button:disabled {
+    box-shadow: var(--box-shadow-inset-light);
+    background-color: var(--color-gray-light);
+    color: var(--color-gray);
+    cursor: not-allowed;
 }

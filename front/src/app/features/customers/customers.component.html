@@ -15,9 +15,14 @@
             <div class="section-title">
                 <p>Liste des locataires</p>
             </div>
-            <div class="cards__container">
-                <div *ngFor="let customer of customersList">
-                    <app-customer-card [customer]="customer"></app-customer-card>
+            <div class="customers-list">
+                <div>
+                    <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'"></app-button>
+                </div>
+                <div class="cards__container">
+                    <div *ngFor="let customer of customersList">
+                        <app-customer-card [customer]="customer"></app-customer-card>
+                    </div>
                 </div>
             </div>
         </div>

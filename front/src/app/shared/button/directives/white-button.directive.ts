@@ -1,12 +1,13 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[lightBlueButton]'
+  selector: '[whiteButton]'
 })
-export class BlueLightButtonDirective {
-  private initialBgColor: string = 'var(--color-secondary)'
+export class WhiteButtonDirective {
+
+  private initialBgColor: string = 'var(--color-white)'
   private initialColor: string = 'var(--color-black)'
-  private hoverBgColor: string = 'var(--color-secondary-light)'
+  private hoverBgColor: string = 'var(--color-gray-light)'
 
   constructor(private element: ElementRef) {
     this.setColor(this.initialColor);
@@ -28,4 +29,5 @@ export class BlueLightButtonDirective {
   @HostListener('mouseleave') onMouseLeave() {
     this.setBgColor(this.initialBgColor);
   }
+
 }

@@ -7,4 +7,8 @@
         <app-icon [icon]="icon"></app-icon>
         {{buttonText}}
     </button>
+    <button *ngIf="buttonColor === 'white'" whiteButton buttonShadow>
+        <app-icon [icon]="icon"></app-icon>
+        {{buttonText}}
+    </button>
 </div>

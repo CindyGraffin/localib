@@ -4,17 +4,16 @@ import { AddCustomerFormComponent } from './add-customer-form/add-customer-form.
 import { CustomerCardComponent } from './customer-card/customer-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomersComponent } from './customers.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ButtonComponent } from 'src/app/shared/button/button.component';
 import { BlueButtonDirective } from 'src/app/shared/button/directives/blue-button.directive';
 import { IconComponent } from 'src/app/shared/icon/icon.component';
 import { ButtonShadowDirective } from 'src/app/shared/button/directives/button-shadow.directive';
 import { BlueLightButtonDirective } from 'src/app/shared/button/directives/blue-light-button.directive';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
-
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerRoutingModule } from './customers-routing.module';
 import { CustomersService } from './customers.service';
+import { WhiteButtonDirective } from 'src/app/shared/button/directives/white-button.directive';
 
 
 @NgModule({
@@ -27,7 +26,8 @@ import { CustomersService } from './customers.service';
     IconComponent,
     ButtonShadowDirective,
     BlueLightButtonDirective,
-    NavbarComponent
+    NavbarComponent,
+    WhiteButtonDirective
   ],
   imports: [
     CommonModule,

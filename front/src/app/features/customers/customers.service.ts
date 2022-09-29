@@ -21,7 +21,7 @@ export class CustomersService {
       )
   }
 
-  addCustomer(customer: any): Observable<Customer> {
+  addCustomer(customer: Partial<{ firstName: string | null; lastName: string | null; email: string | null; phone: string | null; dateOfBirth: string | null; gender: string | null; }>): Observable<Customer> {
     const httpOptions = {
       headers: new HttpHeaders({'Content-type': 'application/json'})
     }

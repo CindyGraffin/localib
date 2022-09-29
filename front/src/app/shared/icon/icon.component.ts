@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-icon',
@@ -7,6 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class IconComponent {
 
-  @Input() icon: any
+  @Input() icon!: IconProp
 
 }
