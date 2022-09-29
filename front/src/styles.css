@@ -18,6 +18,44 @@
     --box-shadow-inset: rgba(50, 50, 93, 0.25) 0px 50px 50px -20px, 
                         rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
                         rgba(10, 37, 64, 0.35) 0px -1px 6px 0px inset;
+    --box-shadow-inset-light: rgba(168, 168, 168, 0.25) 0px 50px 50px -20px, 
+                            rgba(190, 190, 190, 0.3) 0px 30px 60px -30px, 
+                            rgba(145, 165, 185, 0.473) 0px -1px 6px 0px inset;
 }
 
+/* =========== FORM SUBMIT BUTTONS ============== */
 
+.button-submit__container {
+    height: fit-content;
+    width: fit-content;
+}
+.button-submit__container button {
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    column-gap: 0.5rem;
+    width: 100%;
+    padding: 0.35rem 0.6rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: var(--box-shadow-bold-button);
+}
+
+.button-submit__container button:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-white);
+    box-shadow: var(--box-shadow-bold-button);
+}
+
+.button-submit__container button:active {
+    box-shadow: var(--box-shadow-inset);
+}
+
+.button-submit__container button:disabled {
+    box-shadow: var(--box-shadow-inset-light);
+    background-color: rgb(216, 216, 216);
+    cursor: not-allowed;
+}
+
+/* ================ FORM INPUTS ============== */

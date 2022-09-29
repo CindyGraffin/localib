@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { GenderType } from '../types/gender.type';
 
 @Component({
@@ -10,6 +12,7 @@ import { GenderType } from '../types/gender.type';
 export class AddCustomerFormComponent {
 
   genders: GenderType[] = ['Homme', 'Femme']
+  plusIcon: IconProp = faCirclePlus
 
   addCustomer = new FormGroup({
     firstName: new FormControl('', [
