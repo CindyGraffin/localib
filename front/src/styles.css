@@ -36,7 +36,7 @@
 .layout-left {
     flex: 1;
     max-width: 20rem;
-    min-width: 13rem;
+    min-width: 14rem;
     background-color: var(--color-white);
 }
 .layout-right {
@@ -47,7 +47,6 @@
 }
 
 /* =========== FORM SUBMIT BUTTONS ============== */
-
 .button-submit__container {
     height: fit-content;
     width: fit-content;

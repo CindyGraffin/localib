@@ -53,5 +53,5 @@ export class VehicleService {
       where: { id: vehicleId },
     });
     await this.vehicleRepository.remove(vehicle)
-  }
+  } 
 }

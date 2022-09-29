@@ -10,10 +10,11 @@ import { BlueButtonDirective } from 'src/app/shared/button/directives/blue-butto
 import { IconComponent } from 'src/app/shared/icon/icon.component';
 import { ButtonShadowDirective } from 'src/app/shared/button/directives/button-shadow.directive';
 import { BlueLightButtonDirective } from 'src/app/shared/button/directives/blue-light-button.directive';
-import { NavbarComponent } from 'src/app/layout/navbar/navbar.component';
+import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerRoutingModule } from './customers-routing.module';
+import { CustomersService } from './customers.service';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { CustomerRoutingModule } from './customers-routing.module';
     ReactiveFormsModule,
     FontAwesomeModule,
     CustomerRoutingModule
-  ]
+  ],
+  providers: [CustomersService]
 })
 export class CustomersModule { }

@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { Customer } from '../types/customer.type';
 import { GenderType } from '../types/gender.type';
 
 @Component({
@@ -10,6 +11,8 @@ import { GenderType } from '../types/gender.type';
   styleUrls: ['./add-customer-form.component.css']
 })
 export class AddCustomerFormComponent {
+
+  @Input() customersList: Customer[] | undefined
 
   genders: GenderType[] = ['Homme', 'Femme']
   plusIcon: IconProp = faCirclePlus
@@ -48,5 +51,6 @@ export class AddCustomerFormComponent {
   onSubmit() {
     
     console.table(this.addCustomer.value)
+    console.table(this.customersList)
   }
 }
