@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCalendarDays, faCircleXmark, faEnvelope, faPenToSquare, faPhone, faSquarePen, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { Customer } from '../types/customer.type';
 
 @Component({
   selector: 'app-customer-card',
@@ -8,6 +9,8 @@ import { faCalendarDays, faCircleXmark, faEnvelope, faPenToSquare, faPhone, faSq
   styleUrls: ['./customer-card.component.css']
 })
 export class CustomerCardComponent  {
+
+  @Input() customer!: Customer;
 
   phoneIcon: IconProp = faPhone;
   emailIcon: IconProp = faEnvelope;

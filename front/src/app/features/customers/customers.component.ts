@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { AddCustomerFormComponent } from './add-customer-form/add-customer-form.component';
+import { Component, OnInit } from '@angular/core';
 import { CustomersService } from './customers.service';
 import { Customer } from './types/customer.type';
 
@@ -11,10 +10,13 @@ import { Customer } from './types/customer.type';
 export class CustomersComponent implements OnInit {
 
   customersList: Customer[] | undefined;
+  newCustomer!: Customer;
+
 
   constructor(private customerService: CustomersService) {}
 
   ngOnInit(): void {
+    this.newCustomer = new Customer();
     this.customerService.getCustomersList()
                         .subscribe((customersList) => (this.customersList = customersList))
   }

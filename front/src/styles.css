@@ -122,7 +122,15 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 0.6rem;
+    width: 10.5rem;
 }
+.form-group.contact {
+    width: 13.5rem;
+}
+.form-group.date .form-control {
+    padding: 0.25rem 0.6rem;
+}
+
 .form-item {
     display: flex;
     flex-direction: column;

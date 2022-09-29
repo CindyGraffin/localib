@@ -1,7 +1,7 @@
 import {GenderType} from './gender.type';
 
 export class Customer {
-    id!: string;
+    id?: string;
     firstName!: string;
     lastName!: string;
     gender!: GenderType;
@@ -9,3 +9,5 @@ export class Customer {
     email!: string;
     phone!: string;
 }  
+
+export interface CreateCustomer extends Omit<Customer, 'id'> {}

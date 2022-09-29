@@ -1,19 +1,19 @@
 <div class="customer-card__container">
     <div class="customer-card-infos">
         <div class="customer-name">
-            <p>Mme. <span>Graffin Cindy</span></p>
+            <p>{{customer.gender === 'Femme' ? 'Mme.' : 'Mr.'}} <span>{{customer.lastName}} {{customer.firstName}}</span></p>
         </div>
         <div class="customer-info">
             <app-icon class="customer-info-icon" [icon]="phoneIcon"></app-icon>
-            <p>06 49 60 72 21</p>
+            <p>{{customer.phone}}</p>
         </div>
         <div class="customer-info">
             <app-icon class="customer-info-icon" [icon]="emailIcon"></app-icon>
-            graffincindy@gmail.com
+            {{customer.email}}
         </div>
         <div class="customer-info">
             <app-icon [icon]="birthdayIcon" class="customer-info-icon"></app-icon>
-            <p>Né le 10/01/1996</p>
+            <p>Né le {{customer.dateOfBirth | date:'d/M/yyyy'}}</p>
         </div>
     </div>
     <div class="customer-card-buttons">
