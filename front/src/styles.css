@@ -23,6 +23,24 @@
                             rgba(145, 165, 185, 0.473) 0px -1px 6px 0px inset;
 }
 
+/* =========== LAYOUT ============= */
+.layout__container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+.layout-left {
+    flex: 1;
+    max-width: 20rem;
+    min-width: 13rem;
+    background-color: var(--color-white);
+}
+.layout-right {
+    flex: 4;
+    background-color: var(--color-secondary);
+}
+
 /* =========== FORM SUBMIT BUTTONS ============== */
 
 .button-submit__container {
