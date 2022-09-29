@@ -1,7 +1,8 @@
 <div class="form__container">
     <form [formGroup]="addCustomer" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <div class="form-item">
+		<div class="form-inputs">
+			<div class="form-group">
+				<div class="form-item">
                 <label for="firstName"></label>
                 <input 
                 placeholder="Prénom"
@@ -12,7 +13,7 @@
                 />
             </div>
             <div class="form-item">
-                <label for="lastName"></label>
+				<label for="lastName"></label>
                 <input 
                 placeholder="Nom"
                 class="form-control"
@@ -23,21 +24,21 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="form-item">
-                <label for="email"></label>
+			<div class="form-item">
+				<label for="email"></label>
                 <input 
                 placeholder="Email"
-                class="form-control"
+                class="form-control large"
                 type="email"
                 id="email"
                 formControlName="email"
                 />
             </div>
             <div class="form-item">
-                <label for="phone"></label>
+				<label for="phone"></label>
                 <input 
                 placeholder="Téléphone"
-                class="form-control"
+                class="form-control large"
                 type="tel"
                 id="phone"
                 formControlName="phone"
@@ -45,7 +46,7 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="form-item">
+			<div class="form-item">
                 <label for="birthday"></label>
                 <input 
                 class="form-control"
@@ -55,25 +56,26 @@
                 />
             </div>
             <div class="form-item">
-                <label for="gender"></label>
+				<label for="gender"></label>
                 <select 
                     class="form-control"
                     type="gender"
                     id="phone"
                     formControlName="gender"
-        
-                >
-                <option value="" disabled selected>Sexe</option>
-                <option *ngFor="let gender of genders" [ngValue]="gender">
-                    {{gender}}
-                </option>
-            </select>
-            </div>
-        </div>
+					
+					>
+					<option value="" disabled selected>Sexe</option>
+					<option *ngFor="let gender of genders" [ngValue]="gender">
+						{{gender}}
+					</option>
+				</select>
+			</div>
+		</div>
+		</div>
         <div class="submit-form">
-            <div class="button-submit__container">
-                <button type="submit" [disabled]="!addCustomer.valid">
-                    <app-icon [icon]="plusIcon"></app-icon>
+			<div class="button-submit__container">
+				<button type="submit" [disabled]="!addCustomer.valid">
+					<app-icon [icon]="plusIcon"></app-icon>
                     Ajouter un utilisateur
                 </button>
             </div>
