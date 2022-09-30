@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { CustomersService } from '../customers.service';
 import { Customer } from '../types/customer.type';
 import { GenderType } from '../types/gender.type';
@@ -15,11 +15,12 @@ export class AddCustomerFormComponent  {
 
   constructor(private customerService: CustomersService) {}
 
-  @Input() customersList: Customer[] | undefined
+  @Input() customersList: any;
   @Input() newCustomer!: Customer;
+  @Input() addForm!: boolean;
 
-  genders: GenderType[] = ['Homme', 'Femme']
-  plusIcon: IconProp = faCirclePlus
+  genders: GenderType[] = ['Homme', 'Femme'];
+  plusIcon: IconProp = faCirclePlus;
 
   addCustomer = new FormGroup({
     firstName: new FormControl('', [
@@ -50,10 +51,11 @@ export class AddCustomerFormComponent  {
     gender: new FormControl('', [
       Validators.required, 
     ])
-  })
+  });
 
   onSubmit() {
+    this.customersList.unshift(this.addCustomer.value);
     this.customerService.addCustomer(this.addCustomer.value)
-                        .subscribe((customer) => console.table(customer))
+                        .subscribe((customer) => console.table(customer));
   }
 }

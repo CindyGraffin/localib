@@ -9,7 +9,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    box-shadow: var(--box-shadow-bold-card)
+    box-shadow: var(--box-shadow-bold-card);
+    position: relative;
 }
 .customer-name {
     font-weight: 600;
@@ -26,6 +27,7 @@
 .customer-info-icon {
     color: var(--color-primary);
 }
+
 .customer-card-buttons {
     align-self: flex-end;
     display: flex;
@@ -33,4 +35,12 @@
     align-items: flex-end;
     justify-content: center;
     row-gap: 0.3rem;
+}
+
+.card {
+    display: flex;
+    column-gap: 1rem;
+}
+.update-customer {
+    margin-top: 1rem;
 }

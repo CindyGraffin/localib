@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerRoutingModule } from './customers-routing.module';
 import { CustomersService } from './customers.service';
 import { WhiteButtonDirective } from 'src/app/shared/button/directives/white-button.directive';
+import { UpdateCustomerFormComponent } from './update-customer-form/update-customer-form.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { WhiteButtonDirective } from 'src/app/shared/button/directives/white-but
     ButtonShadowDirective,
     BlueLightButtonDirective,
     NavbarComponent,
-    WhiteButtonDirective
+    WhiteButtonDirective,
+    UpdateCustomerFormComponent
   ],
   imports: [
     CommonModule,

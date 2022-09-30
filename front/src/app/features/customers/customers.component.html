@@ -16,12 +16,14 @@
                 <p>Liste des locataires</p>
             </div>
             <div class="customers-list">
-                <div>
-                    <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'"></app-button>
+                <div class="results-actions">
+                    <input class="form-control" type="text" placeholder="Chercher par nom">
+                    <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
+                    <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>
                 <div class="cards__container">
                     <div *ngFor="let customer of customersList">
-                        <app-customer-card [customer]="customer"></app-customer-card>
+                        <app-customer-card [customer]="customer" [customersList]="customersList"></app-customer-card>
                     </div>
                 </div>
             </div>

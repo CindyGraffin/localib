@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faFilter, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { CustomersService } from './customers.service';
 import { Customer } from './types/customer.type';
 
@@ -11,14 +13,14 @@ export class CustomersComponent implements OnInit {
 
   customersList: Customer[] | undefined;
   newCustomer!: Customer;
-
+  filterIcon: IconProp = faFilter;
+  sortIcon: IconProp = faFolder;
 
   constructor(private customerService: CustomersService) {}
 
   ngOnInit(): void {
-    this.newCustomer = new Customer();
     this.customerService.getCustomersList()
-                        .subscribe((customersList) => (this.customersList = customersList))
+                        .subscribe((customersList) => (this.customersList = customersList));
   }
 
 }
