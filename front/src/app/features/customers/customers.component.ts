@@ -15,12 +15,26 @@ export class CustomersComponent implements OnInit {
   newCustomer!: Customer;
   filterIcon: IconProp = faFilter;
   sortIcon: IconProp = faFolder;
+  searchTerm: string = ''
+
+  customers: Customer[] | undefined;
 
   constructor(private customerService: CustomersService) {}
 
   ngOnInit(): void {
     this.customerService.getCustomersList()
                         .subscribe((customersList) => (this.customersList = customersList));
+  }
+
+  updateSearchTerm(event: KeyboardEvent) {
+    this.searchTerm
+    if (this.searchTerm = '') {
+      this.customers = this.customersList
+    } else {
+
+    }
+    console.log((event.target as HTMLInputElement).value ) 
+    
   }
 
 }

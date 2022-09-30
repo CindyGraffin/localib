@@ -17,7 +17,7 @@
             </div>
             <div class="customers-list">
                 <div class="results-actions">
-                    <input class="form-control" type="text" placeholder="Chercher par nom">
+                    <input #searchBox class="form-control" type="text" placeholder="Chercher par nom" (keyup)="updateSearchTerm($event)">
                     <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
                     <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>
