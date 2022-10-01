@@ -1,8 +1,9 @@
 import { Renting } from 'src/renting/entities/renting.entity';
-import { Entity, OneToMany, Column,PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from 'typeorm'
+import { Entity, OneToMany, Column,PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Unique} from 'typeorm'
 import { VehicleState, VehicleType } from '../types/VehiculeTypes';
 
 @Entity()
+@Unique(['registrationNumber'])
 export class Vehicle {
 
     @PrimaryGeneratedColumn('uuid')
@@ -14,17 +15,17 @@ export class Vehicle {
     @Column()
     brand: string
 
-    @Column()
+    @Column({name: 'registration_number'})
     registrationNumber: string;
 
     @Column()
     dayPrice: number;
 
     @Column()
-    vehicleType: VehicleType;
+    vehicleType: VehicleType; 
 
     @Column()
-    vehicleState: VehicleState;
+    vehicleState: VehicleState; 
 
     @Column({default: true})
     disponibility: boolean;

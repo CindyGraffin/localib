@@ -1,0 +1,20 @@
+.form__container .edit {
+    flex-direction: column;
+    row-gap: 0.4rem;
+}
+.edit .form-control {
+    width: 12rem;
+    height: 1rem;
+}
+.form__container.gender {
+    width: 13rem;
+}
+.select-gender {
+    border: 1px solid var(--color-primary);
+    width: 5.5rem;
+    padding: 0.12rem 0.5rem;
+    border-radius: 30px;
+}
+.submit-form-edit {
+    margin-top: 0.4rem;
+}

@@ -1,0 +1,17 @@
+.cards__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 2.5rem;
+}
+.results-actions {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 0.5rem;
+    margin-top: 1rem;
+}
+.no-customers p {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-family: 'Exo';
+}

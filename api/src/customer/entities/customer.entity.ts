@@ -1,7 +1,9 @@
 import { Renting } from 'src/renting/entities/renting.entity';
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn,  UpdateDateColumn} from 'typeorm';
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn,  Unique,  UpdateDateColumn} from 'typeorm';
+import { GenderType } from '../types/gender.type';
 
 @Entity()
+@Unique(['email'])
 export class Customer {
     
     @PrimaryGeneratedColumn('uuid')
@@ -12,11 +14,14 @@ export class Customer {
 
     @Column()
     lastName: string;
+
+    @Column()
+    gender: GenderType;
     
     @Column()
     dateOfBirth: Date;
     
-    @Column()
+    @Column({name: 'customer_email'}) 
     email: string;
     
     @Column()
