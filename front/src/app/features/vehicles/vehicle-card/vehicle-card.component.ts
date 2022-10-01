@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCircleCheck, faCircleXmark, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faPenToSquare, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Vehicle } from '../types/vehicule.type';
 
 @Component({
@@ -17,7 +17,7 @@ export class VehicleCardComponent {
 
   checkIcon: IconProp = faCircleCheck;
   editIcon: IconProp = faPenToSquare;
-  crossIcon: IconProp = faCircleXmark;
+  crossIcon: IconProp = faXmark;
 
   edit() {
     this.updateVehicle = !this.updateVehicle;
