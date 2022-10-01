@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+<div class="layout__container">
+    <div class="layout-left">
+        <img src="assets/images/localib-logo.png" />
+    </div>
+    <div class="layout-right">
+        <div class="add-item__container">
+            <app-section-title [sectionTitle]="'Ajouter un véhicule'"></app-section-title>
+            <p class="section-text">Remplissez les champs ci-dessous puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo;, pour ajouter le nouveau véhicule à la liste de ceux déjà existants.</p>
+            <app-add-vehicle-form [vehiclesList]="vehiclesList"></app-add-vehicle-form>
+        </div>
+        <div class="items-list__container">
+            <app-section-title [sectionTitle]="'Liste des locataires'"></app-section-title>
+            <div class="items-list">
+                <div class="results-actions">
+                    <input #searchBox class="form-control large" type="text" placeholder="Chercher par immatriculation" (keyup)="searchVehicles($event)">
+                    <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
+                    <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
+                </div>
+                <div class="items__container">
+                    <div class="no-results" *ngIf="vehiclesList.length === 0">
+                        <p>Aucun véhicule enregistré. Remplissez le formulaire ci-dessus puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo; afin d'ajouter un véhicule.</p>
+                    </div>
+                    <div class="no-results" *ngIf="vehicles.length === 0">
+                        <p>Aucun véhicule ne correspond à la recherche effectuée.</p>
+                    </div>
+                    <div *ngFor="let vehicle of vehicles">
+                        vehicle-card
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -4,16 +4,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomersModule } from './features/customers/customers.module';
 import { HttpClientModule } from '@angular/common/http';
+import { VehiclesModule } from './features/vehicles/vehicles.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CustomersModule,
-    HttpClientModule
+    VehiclesModule,
+    HttpClientModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
