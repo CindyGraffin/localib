@@ -7,6 +7,7 @@
     box-shadow: var(--box-shadow-bold-card);
     width: 38.5rem;
     margin-top: 1.4rem;
+    position: relative;
 }
 .card-infos {
     width: 100%;
@@ -40,4 +41,26 @@
 .check-icon {
     color: var(--color-primary);
     font-size: 1.3rem;
+}
+.card-price {
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.card-price {
+    line-height: 1.6rem;
+}
+.card-price p {
+    font-family: 'Exo';
+}
+.card-price p:nth-child(1) {
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+.card-price span {
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: 'Exo';
 }

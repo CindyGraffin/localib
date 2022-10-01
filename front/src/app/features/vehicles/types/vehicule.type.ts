@@ -9,6 +9,7 @@ export class Vehicle {
     dayPrice!: number;
     vehicleType!: VehicleType;
     vehicleState!: VehicleStateType;
+    disponibility!: boolean;
 }  
 
 export interface CreateCustomer extends Omit<Vehicle, 'id'> {}
