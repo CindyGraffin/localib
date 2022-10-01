@@ -29,19 +29,19 @@ export class AddVehicleFormComponent  {
       Validators.required, 
       Validators.maxLength(25), 
       Validators.minLength(1), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû ]{1,25}$')
     ]),
     brand: new FormControl('', [
       Validators.required, 
       Validators.maxLength(25), 
       Validators.minLength(1), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû ]{1,25}$')
     ]),
     registrationNumber: new FormControl('', [
       Validators.required, 
       Validators.maxLength(7), 
       Validators.minLength(7), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû ]{1,25}$')
     ]),
     dayPrice: new FormControl('', [
       Validators.required, 

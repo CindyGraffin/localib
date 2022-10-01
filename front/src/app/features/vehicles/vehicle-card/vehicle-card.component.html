@@ -1,1 +1,20 @@
-<p>vehicle-card works!</p>
+<div class="vehicle-card__container">
+  <div class="card-img">
+    <img src="assets/images/fiat500.jpg" alt="">
+  </div>
+  <div class="card-infos">
+    <div class="vehicle-infos">
+      <p><span>Modèle:</span> {{vehicle.vehicleModel}}</p>
+      <p><span>Marque:</span> {{vehicle.brand}}</p>
+      <p><span>Immatriculation:</span> {{vehicle.registrationNumber}}</p>
+      <p><span>Type de véhicule:</span> {{vehicle.vehicleType}}</p>
+      <p><span>Etat du véhicule:</span> {{vehicle.vehicleState}}</p>
+    </div>
+    <div class="vehicle-dispo">
+      <p><span>Disponibilité: </span> <app-icon class="check-icon" [icon]="checkIcon"></app-icon></p>
+      <app-button [buttonColor]="'blue'" [buttonSize]="'large'" [buttonText]="'Modifier les informations'" [icon]="editIcon"></app-button>
+    </div>
+  </div>
+</div>
+
+  

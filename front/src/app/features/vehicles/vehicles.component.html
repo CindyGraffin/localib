@@ -25,7 +25,7 @@
                         <p>Aucun véhicule ne correspond à la recherche effectuée.</p>
                     </div>
                     <div *ngFor="let vehicle of vehicles">
-                        vehicle-card
+                        <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
                     </div>
                 </div>
             </div>

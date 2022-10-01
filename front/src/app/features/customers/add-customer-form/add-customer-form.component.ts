@@ -25,13 +25,13 @@ export class AddCustomerFormComponent  {
       Validators.required, 
       Validators.maxLength(25), 
       Validators.minLength(1), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Zàéèçùàïüöû ]{1,25}$')
     ]),
     lastName: new FormControl('', [
       Validators.required, 
       Validators.maxLength(25), 
       Validators.minLength(1), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Zàéèçùàïüöû ]{1,25}$')
     ]),
     email: new FormControl('', [
       Validators.required, 
