@@ -10,3 +10,8 @@
     column-gap: 0.5rem;
     margin-top: 1rem;
 }
+.no-customers p {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-family: 'Exo';
+}

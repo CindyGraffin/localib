@@ -16,7 +16,6 @@ export class AddCustomerFormComponent  {
   constructor(private customerService: CustomersService) {}
 
   @Input() customersList: any;
-  @Input() newCustomer!: Customer;
   @Input() addForm!: boolean;
 
   genders: GenderType[] = ['Homme', 'Femme'];

@@ -20,16 +20,16 @@ import { UpdateCustomerFormComponent } from './update-customer-form/update-custo
 @NgModule({
   declarations: [
     AddCustomerFormComponent,
+    BlueButtonDirective,
+    BlueLightButtonDirective,
+    ButtonComponent,
+    ButtonShadowDirective,
     CustomerCardComponent,
     CustomersComponent,
-    ButtonComponent,
-    BlueButtonDirective,
     IconComponent,
-    ButtonShadowDirective,
-    BlueLightButtonDirective,
     NavbarComponent,
-    WhiteButtonDirective,
-    UpdateCustomerFormComponent
+    UpdateCustomerFormComponent,
+    WhiteButtonDirective
   ],
   imports: [
     CommonModule,

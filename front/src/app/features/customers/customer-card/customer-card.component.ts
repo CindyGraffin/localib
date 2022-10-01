@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCalendarDays, faEnvelope, faPenToSquare, faPhone, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays, faCheck, faEnvelope, faPenToSquare, faPhone, faTrashCan, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { CustomersService } from '../customers.service';
 import { Customer } from '../types/customer.type';
 
@@ -17,16 +17,21 @@ export class CustomerCardComponent  {
   @Input() customersList!: Customer[] | undefined;
 
   updateCustomer: boolean = false;
+  deleteCustomer: boolean = false;
 
   phoneIcon: IconProp = faPhone;
   emailIcon: IconProp = faEnvelope;
   birthdayIcon: IconProp = faCalendarDays;
   editIcon: IconProp = faPenToSquare;
   deleteIcon: IconProp = faTrashCan;
+  checkIcon: IconProp = faCheck;
+  crossIcon: IconProp = faXmark;
 
-  deleteCustomer(customer: Customer) {
-    console.log(customer.id);
-    
+  changeDeleteCustomer() {
+    this.deleteCustomer = !this.deleteCustomer
+  }
+
+  defDeleteCustomer(customer: Customer) {
     this.customersService.deleteCustomerById(customer.id!).subscribe(() => console.log('deleted'));
     let customerIndex = this.customersList!.indexOf(customer);
     this.customersList!.splice(customerIndex, 1);

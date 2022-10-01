@@ -22,13 +22,32 @@
     </div>
     <div class="customer-card-buttons">
       <app-button
+        *ngIf="!deleteCustomer"
         [buttonText]="'Supprimer un locataire'"
         [buttonColor]="'light-blue'"
         [icon]="deleteIcon"
         [buttonSize]="'large'"
-        (click)="deleteCustomer(customer)"
+        (click)="changeDeleteCustomer()"
       >
       </app-button>
+      <div *ngIf="deleteCustomer" class="confirm-delete">
+        <app-button 
+        [buttonText]="'Confirmer la suppresion'"
+        [buttonColor]="'light-blue'"
+        [icon]="checkIcon"
+        [buttonSize]="'large'"
+        (click)="defDeleteCustomer(customer)"
+        >
+        </app-button>
+        <app-button
+          [buttonText]="'Annuler'"
+          [buttonColor]="'light-blue'"
+          [icon]="crossIcon"
+          [buttonSize]="'small'"
+          (click)="changeDeleteCustomer()"
+        >
+      </app-button>
+      </div>
       <app-button
         [buttonText]="'Modifier les informations'"
         [buttonColor]="'blue'"
