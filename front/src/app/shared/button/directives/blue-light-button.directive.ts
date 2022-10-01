@@ -4,9 +4,10 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
   selector: '[lightBlueButton]'
 })
 export class BlueLightButtonDirective {
-  private initialBgColor: string = 'var(--color-secondary)'
-  private initialColor: string = 'var(--color-black)'
-  private hoverBgColor: string = 'var(--color-secondary-light)'
+  
+  private initialBgColor: string = 'var(--color-secondary)';
+  private initialColor: string = 'var(--color-black)';
+  private hoverBgColor: string = 'var(--color-secondary-light)';
 
   constructor(private element: ElementRef) {
     this.setColor(this.initialColor);

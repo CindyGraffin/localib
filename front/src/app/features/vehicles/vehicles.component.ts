@@ -13,12 +13,10 @@ export class VehiclesComponent implements OnInit {
 
   vehiclesList: Vehicle[] | [] = [];
   vehicles: Vehicle[] | [] = [];
-
   searchTerm: string = '';
 
   filterIcon: IconProp = faFilter;
   sortIcon: IconProp = faFolder;
-
 
   constructor(private vehicleService: VehiclesService) {}
 

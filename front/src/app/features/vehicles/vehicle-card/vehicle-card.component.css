@@ -63,3 +63,7 @@
     font-size: 2rem;
     font-family: 'Exo';
 }
+.card-vehicle {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,6 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 type ButtonSize = 'large' | 'medium' | 'small'
 

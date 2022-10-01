@@ -21,11 +21,11 @@
                     <div class="no-results" *ngIf="vehiclesList.length === 0">
                         <p>Aucun véhicule enregistré. Remplissez le formulaire ci-dessus puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo; afin d'ajouter un véhicule.</p>
                     </div>
-                    <div class="no-results" *ngIf="vehicles.length === 0">
+                    <div class="no-results" *ngIf="vehicles.length === 0 && searchTerm !== ''">
                         <p>Aucun véhicule ne correspond à la recherche effectuée.</p>
                     </div>
                     <div *ngFor="let vehicle of vehicles">
-                        <app-vehicle-card [vehicle]="vehicle"></app-vehicle-card>
+                        <app-vehicle-card [vehicle]="vehicle" [vehiclesList]="vehiclesList"></app-vehicle-card>
                     </div>
                 </div>
             </div>

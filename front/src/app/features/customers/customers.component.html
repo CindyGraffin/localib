@@ -21,7 +21,7 @@
                     <div class="no-results" *ngIf="customersList.length === 0">
                         <p>Aucun locataire enregistré. Remplissez le formulaire ci-dessus puis cliquez sur le bouton &laquo;Ajouter un locataire&raquo; afin d'ajouter un locataire.</p>
                     </div>
-                    <div class="no-results" *ngIf="customers.length === 0">
+                    <div class="no-results" *ngIf="customers.length === 0 && searchTerm !== ''">
                         <p>Aucun locataire ne correspond à la recherche effectuée.</p>
                     </div>
                     <div *ngFor="let customer of customers">

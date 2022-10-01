@@ -1,0 +1,16 @@
+.edit-vehicle-btn {
+    margin-top: 0.5rem;
+}
+.button-submit__container.vehicle {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.delete-vehicle-btns {
+    margin-top: 0.25rem;
+}
+.form-group-vehicle {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+}

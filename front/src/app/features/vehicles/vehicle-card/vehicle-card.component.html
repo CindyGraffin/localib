@@ -1,3 +1,4 @@
+<div class="card-vehicle">
 <div class="vehicle-card__container">
   <div class="card-price">
     <p>A partir de</p>
@@ -17,15 +18,26 @@
     </div>
     <div class="vehicle-dispo">
       <p><span>Disponibilité: </span> <app-icon class="check-icon" [icon]="checkIcon"></app-icon></p>
-      <app-button 
+      <app-button *ngIf="!updateVehicle"
         (click)="edit()"
         [buttonColor]="'blue'" 
         [buttonSize]="'large'" 
         [buttonText]="'Modifier les informations'" 
         [icon]="editIcon">
     </app-button>
+    <app-button *ngIf="updateVehicle"
+        [buttonText]="'Annuler la modification'"
+        [buttonColor]="'blue'"
+        [icon]="crossIcon"
+        [buttonSize]="'large'"
+        (click)="edit()"
+      >
+      </app-button>
     </div>
   </div>
 </div>
-
+<div class="update-vehicle" *ngIf="updateVehicle">
+  <app-update-vehicle-form (toggleEditEvent)="edit()" [vehicle]="vehicle" [vehiclesList]="vehiclesList"></app-update-vehicle-form>
+</div>
+</div>
   

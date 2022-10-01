@@ -8,6 +8,6 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 })
 export class IconComponent {
 
-  @Input() icon!: IconProp
+  @Input() icon!: IconProp;
 
 }
