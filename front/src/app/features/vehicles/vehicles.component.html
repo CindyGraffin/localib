@@ -13,7 +13,7 @@
             <app-section-title [sectionTitle]="'Liste des véhicules'"></app-section-title>
             <div class="items-list">
                 <div class="results-actions">
-                    <input #searchBox class="form-control large" type="text" placeholder="Chercher par immatriculation" (keyup)="searchVehicles($event)">
+                    <input #searchBox class="form-control large" type="text" placeholder="Chercher par modèle/marque" (keyup)="searchVehicles($event)">
                     <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
                     <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>

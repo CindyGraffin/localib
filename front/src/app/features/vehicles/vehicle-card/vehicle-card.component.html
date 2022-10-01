@@ -17,7 +17,13 @@
     </div>
     <div class="vehicle-dispo">
       <p><span>Disponibilité: </span> <app-icon class="check-icon" [icon]="checkIcon"></app-icon></p>
-      <app-button [buttonColor]="'blue'" [buttonSize]="'large'" [buttonText]="'Modifier les informations'" [icon]="editIcon"></app-button>
+      <app-button 
+        (click)="edit()"
+        [buttonColor]="'blue'" 
+        [buttonSize]="'large'" 
+        [buttonText]="'Modifier les informations'" 
+        [icon]="editIcon">
+    </app-button>
     </div>
   </div>
 </div>

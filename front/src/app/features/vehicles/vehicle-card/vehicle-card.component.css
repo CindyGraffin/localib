@@ -2,7 +2,7 @@
     display: flex;
     column-gap: 0.5rem;
     background-color: var(--color-white);
-    padding: 0.25rem;
+    padding: 0.20rem;
     border-radius: 20px;
     box-shadow: var(--box-shadow-bold-card);
     width: 38.5rem;
@@ -29,7 +29,6 @@
     font-weight: 600;
 }
 .vehicle-dispo {
-
     display: flex;
     justify-content: space-between;
 }

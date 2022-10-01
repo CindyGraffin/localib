@@ -32,7 +32,7 @@ export class VehiclesComponent implements OnInit {
     if (this.searchTerm === '') {
       this.vehicles = this.vehiclesList;
     } else {
-      this.vehicles = this.vehiclesList.filter((vehicle: Vehicle) => vehicle.registrationNumber.toLowerCase().includes(this.searchTerm.toLowerCase()));
+      this.vehicles = this.vehiclesList.filter((vehicle: Vehicle) => vehicle.vehicleModel.toLowerCase().includes(this.searchTerm.toLowerCase()) || vehicle.brand.toLowerCase().includes(this.searchTerm.toLowerCase()) ||  (vehicle.brand + ' ' + vehicle.vehicleModel).toLowerCase().includes(this.searchTerm.toLowerCase()) ||  (vehicle.vehicleModel + ' ' + vehicle.brand).toLowerCase().includes(this.searchTerm.toLowerCase()));
     }  
   }
 

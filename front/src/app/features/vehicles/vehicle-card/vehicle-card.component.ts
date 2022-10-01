@@ -12,7 +12,13 @@ export class VehicleCardComponent {
 
   @Input() vehicle!: Vehicle;
 
+  updateVehicle: boolean = false;
+
   checkIcon: IconProp = faCircleCheck;
   editIcon: IconProp = faPenToSquare;
+
+  edit() {
+    this.updateVehicle = !this.updateVehicle;
+  }
 
 }
