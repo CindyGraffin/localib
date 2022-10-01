@@ -59,13 +59,12 @@
           <label for="gender"></label>
           <select
             class="form-control"
-            type="gender"
-            id="phone"
+            id="gender"
             formControlName="gender"
           >
           
             <option value="" disabled selected>Sexe</option>
-            <option *ngFor="let gender of genders" [ngValue]="gender">
+            <option *ngFor="let gender of genders">
               {{ gender }}
             </option>
           </select>

@@ -1,0 +1,43 @@
+<div class="card-vehicle">
+<div class="vehicle-card__container">
+  <div class="card-price">
+    <p>A partir de</p>
+    <p><span>{{vehicle.dayPrice}}</span>€/jour</p>
+
+  </div>
+  <div class="card-img">
+    <img src="assets/images/fiat500.jpg" alt="">
+  </div>
+  <div class="card-infos">
+    <div class="vehicle-infos">
+      <p><span>Modèle:</span> {{vehicle.vehicleModel}}</p>
+      <p><span>Marque:</span> {{vehicle.brand}}</p>
+      <p><span>Immatriculation:</span> {{vehicle.registrationNumber}}</p>
+      <p><span>Type de véhicule:</span> {{vehicle.vehicleType}}</p>
+      <p><span>Etat du véhicule:</span> {{vehicle.vehicleState}}</p>
+    </div>
+    <div class="vehicle-dispo">
+      <p><span>Disponibilité: </span> <app-icon class="check-icon" [icon]="checkIcon"></app-icon></p>
+      <app-button *ngIf="!updateVehicle"
+        (click)="edit()"
+        [buttonColor]="'blue'" 
+        [buttonSize]="'large'" 
+        [buttonText]="'Modifier les informations'" 
+        [icon]="editIcon">
+    </app-button>
+    <app-button *ngIf="updateVehicle"
+        [buttonText]="'Annuler la modification'"
+        [buttonColor]="'blue'"
+        [icon]="crossIcon"
+        [buttonSize]="'large'"
+        (click)="edit()"
+      >
+      </app-button>
+    </div>
+  </div>
+</div>
+<div class="update-vehicle" *ngIf="updateVehicle">
+  <app-update-vehicle-form (toggleEditEvent)="edit()" [vehicle]="vehicle" [vehiclesList]="vehiclesList"></app-update-vehicle-form>
+</div>
+</div>
+  

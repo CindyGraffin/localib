@@ -4,28 +4,24 @@
         <img src="assets/images/localib-logo.png" />
     </div>
     <div class="layout-right">
-        <div class="add-customer__container">
-            <div class="section-title">
-                <p>Ajouter un locataire</p>
-            </div>
+        <div class="add-item__container">
+            <app-section-title [sectionTitle]="'Ajouter un locataire'"></app-section-title>
             <p class="section-text">Remplissez les champs ci-dessous puis cliquez sur le bouton &laquo;Ajouter un locataire&raquo;, pour ajouter le nouveau locataire à la liste de ceux déjà existants.</p>
             <app-add-customer-form [customersList]="customersList"></app-add-customer-form>
         </div>
-        <div class="customers-list__container">
-            <div class="section-title">
-                <p>Liste des locataires</p>
-            </div>
-            <div class="customers-list">
+        <div class="items-list__container">
+            <app-section-title [sectionTitle]="'Liste des locataires'"></app-section-title>
+            <div class="items-list">
                 <div class="results-actions">
                     <input #searchBox class="form-control" type="text" placeholder="Chercher par nom" (keyup)="searchCustomers($event)">
                     <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
                     <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>
                 <div class="cards__container">
-                    <div class="no-customers" *ngIf="customersList.length === 0">
+                    <div class="no-results" *ngIf="customersList.length === 0">
                         <p>Aucun locataire enregistré. Remplissez le formulaire ci-dessus puis cliquez sur le bouton &laquo;Ajouter un locataire&raquo; afin d'ajouter un locataire.</p>
                     </div>
-                    <div class="no-customers" *ngIf="customers.length === 0">
+                    <div class="no-results" *ngIf="customers.length === 0 && searchTerm !== ''">
                         <p>Aucun locataire ne correspond à la recherche effectuée.</p>
                     </div>
                     <div *ngFor="let customer of customers">

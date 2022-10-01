@@ -27,7 +27,6 @@ export class UpdateCustomerFormComponent {
     this.customersService.updateCustomerById(customer.id!, customer)
                           .subscribe();
     this.changeUpdateCustomer(this.updateCustomer);
-    console.log(this.updateCustomer);
   }
 
   changeUpdateCustomer(updateCustomer: boolean) {

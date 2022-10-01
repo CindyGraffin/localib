@@ -48,10 +48,18 @@
         >
       </app-button>
       </div>
-      <app-button
+      <app-button *ngIf="!updateCustomer"
         [buttonText]="'Modifier les informations'"
         [buttonColor]="'blue'"
         [icon]="editIcon"
+        [buttonSize]="'large'"
+        (click)="edit()"
+      >
+      </app-button>
+      <app-button *ngIf="updateCustomer"
+        [buttonText]="'Annuler les modifications'"
+        [buttonColor]="'blue'"
+        [icon]="crossIcon"
         [buttonSize]="'large'"
         (click)="edit()"
       >

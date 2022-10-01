@@ -1,9 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCirclePlus, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { CustomersService } from '../customers.service';
-import { Customer } from '../types/customer.type';
 import { GenderType } from '../types/gender.type';
 
 @Component({
@@ -26,13 +25,13 @@ export class AddCustomerFormComponent  {
       Validators.required, 
       Validators.maxLength(25), 
       Validators.minLength(1), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Zàéèçùàïüöû ]{1,25}$')
     ]),
     lastName: new FormControl('', [
       Validators.required, 
       Validators.maxLength(25), 
       Validators.minLength(1), 
-      Validators.pattern('^[a-zA-Z0-9àéèçùàïüöû]{1,25}$')
+      Validators.pattern('^[a-zA-Zàéèçùàïüöû ]{1,25}$')
     ]),
     email: new FormControl('', [
       Validators.required, 

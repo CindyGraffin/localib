@@ -1,0 +1,69 @@
+.vehicle-card__container {
+    display: flex;
+    column-gap: 0.5rem;
+    background-color: var(--color-white);
+    padding: 0.20rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-bold-card);
+    width: 38.5rem;
+    margin-top: 1.4rem;
+    position: relative;
+}
+.card-infos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+}
+.card-img img {
+    object-fit: cover;
+    width: 13rem;
+    height: 9rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-bold-card);
+}
+.vehicle-infos span {
+    font-weight: 600;
+}
+.vehicle-dispo span {
+    font-weight: 600;
+}
+.vehicle-dispo {
+    display: flex;
+    justify-content: space-between;
+}
+.vehicle-dispo p {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+.check-icon {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+}
+.card-price {
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.card-price {
+    line-height: 1.6rem;
+}
+.card-price p {
+    font-family: 'Exo';
+}
+.card-price p:nth-child(1) {
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+.card-price span {
+    font-weight: 600;
+    font-size: 2rem;
+    font-family: 'Exo';
+}
+.card-vehicle {
+    display: flex;
+    flex-direction: column;
+}
