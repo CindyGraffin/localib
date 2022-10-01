@@ -55,5 +55,6 @@ export class AddCustomerFormComponent  {
     this.customersList.unshift(this.addCustomer.value);
     this.customerService.addCustomer(this.addCustomer.value)
                         .subscribe((customer) => console.table(customer));
+    this.addCustomer.reset(); 
   }
 }

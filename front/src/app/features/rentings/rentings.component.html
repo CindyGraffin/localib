@@ -5,15 +5,15 @@
     </div>
     <div class="layout-right">
         <div class="add-item__container">
-            <app-section-title [sectionTitle]="'Ajouter un véhicule'"></app-section-title>
+            <app-section-title [sectionTitle]="'Locations de véhicules'"></app-section-title>
             <p class="section-text">Remplissez les champs ci-dessous puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo;, pour ajouter le nouveau véhicule à la liste de ceux déjà existants.</p>
-            <app-add-vehicle-form [vehiclesList]="vehiclesList"></app-add-vehicle-form>
+            date input
         </div>
         <div class="items-list__container">
             <app-section-title [sectionTitle]="'Liste des véhicules'"></app-section-title>
             <div class="items-list">
                 <div class="results-actions">
-                    <input #searchBox class="form-control large" type="text" placeholder="Chercher par modèle/marque" (keyup)="searchVehicles($event)">
+                    <input #searchBox class="form-control location" type="text" placeholder="Chercher par modèle/marque" (keyup)="searchVehicles($event)">
                     <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
                     <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>
@@ -25,11 +25,12 @@
                         <p>Aucun véhicule ne correspond à la recherche effectuée.</p>
                     </div>
                     <div *ngFor="let vehicle of vehicles">
-                        <app-vehicle-card [vehicle]="vehicle" [vehiclesList]="vehiclesList"></app-vehicle-card>
+                        <app-vehicle-card [locationCard]="true" [vehicle]="vehicle" [vehiclesList]="vehiclesList"></app-vehicle-card>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 

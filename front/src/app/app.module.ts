@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CustomersModule } from './features/customers/customers.module';
 import { HttpClientModule } from '@angular/common/http';
 import { VehiclesModule } from './features/vehicles/vehicles.module';
+import { RentingsModule } from './features/rentings/rentings.module';
 
 
 @NgModule({
@@ -17,8 +18,7 @@ import { VehiclesModule } from './features/vehicles/vehicles.module';
     CustomersModule,
     VehiclesModule,
     HttpClientModule,
-
-
+    RentingsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

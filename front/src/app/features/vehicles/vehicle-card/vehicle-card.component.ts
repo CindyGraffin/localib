@@ -12,8 +12,10 @@ export class VehicleCardComponent {
 
   @Input() vehicle!: Vehicle;
   @Input() vehiclesList!: Vehicle[];
+  @Input() locationCard!: boolean;
 
   updateVehicle: boolean = false;
+  reserveVehicle: boolean = false;
 
   checkIcon: IconProp = faCircleCheck;
   editIcon: IconProp = faPenToSquare;
@@ -21,5 +23,8 @@ export class VehicleCardComponent {
 
   edit() {
     this.updateVehicle = !this.updateVehicle;
+  }
+  reserve() {
+    this.reserveVehicle = !this.reserveVehicle;
   }
 }
