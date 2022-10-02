@@ -36,9 +36,6 @@ export class ManagementComponent implements OnInit {
     this.startDate = this.startDateTemp
     this.endDate = this.endDateTemp
     console.log(this.rentingsList);
-    
-    
-    
   }
 
   searchRentingsByCustomer(event: KeyboardEvent) {

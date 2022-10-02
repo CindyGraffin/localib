@@ -4,9 +4,7 @@ import { VehiclesComponent } from "./vehicles.component";
 
 
 const routes: Routes = [
-    { path: "vehicles", children: [
-        {path: '', component: VehiclesComponent}
-    ]}
+    { path: "vehicles", component: VehiclesComponent}
 ];
 
 @NgModule({

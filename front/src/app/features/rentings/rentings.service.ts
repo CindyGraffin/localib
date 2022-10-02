@@ -22,7 +22,7 @@ export class RentingsService {
 	};
 
   getRentingsList(): Observable<RentingPopulateType[]> {
-    return this.http.get<Renting[]>(`${this.path}`).pipe(
+    return this.http.get<RentingPopulateType[]>(`${this.path}`).pipe(
         catchError(error => this.handleError(error, []))
       );
   };

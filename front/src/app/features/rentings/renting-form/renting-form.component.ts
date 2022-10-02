@@ -57,7 +57,7 @@ export class RentingFormComponent implements OnInit {
   }
 
   navigateToLocationsManagement() {
-    this.router.navigateByUrl('/vehicles')
+    this.router.navigateByUrl('/management')
   }
 
 }
