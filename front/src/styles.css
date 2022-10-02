@@ -202,3 +202,14 @@
     border-radius: 20px;
     box-shadow: var(--box-shadow-bold-card);
 }
+/* =========== LOGO=========== */
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logo img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}

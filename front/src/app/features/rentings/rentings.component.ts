@@ -50,10 +50,5 @@ export class RentingsComponent implements OnInit {
     this.startDate = this.startDateTemp;;
     this.endDate = this.endDateTemp;
     this.vehicles = this.vehiclesList;
-  }
-  transformDate(date: Date) {
-    let timestamp = new Date(date).getTime()
-    return timestamp;
-  }
-  
+  } 
 }
