@@ -45,8 +45,10 @@
       <div class="renting-btns">
         <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Voir la facture'" [icon]="invoiceIcon">
         </app-button>
-        <app-button [buttonColor]="'light-blue'" [buttonSize]="'small'" [buttonText]="'Supprimer la location'"
-          [icon]="deleteIcon"></app-button>
+        <app-button *ngIf="!deleteRenting" [buttonColor]="'light-blue'" [buttonSize]="'small'" [buttonText]="'Supprimer la location'"
+          [icon]="deleteIcon" (click)="changeDeleteRenting()"></app-button>
+          <app-button *ngIf="deleteRenting" [buttonColor]="'light-blue'" [buttonSize]="'small'" [buttonText]="'Supprimer la location'"
+          [icon]="validateIcon" (click)="deleteLocationById(renting)"></app-button>
       </div>
     </div>
 

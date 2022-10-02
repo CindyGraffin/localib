@@ -58,5 +58,7 @@ export class ManagementComponent implements OnInit {
       this.rentings = this.rentingsList.filter((renting: RentingPopulateType) => renting.vehicle.vehicleModel.toLowerCase().includes(this.searchTermVehicle.toLowerCase()) || renting.vehicle.brand.toLowerCase().includes(this.searchTermVehicle.toLowerCase()) ||  (renting.vehicle.brand + ' ' + renting.vehicle.vehicleModel).toLowerCase().includes(this.searchTermVehicle.toLowerCase()) ||  (renting.vehicle.vehicleModel + ' ' + renting.vehicle.brand).toLowerCase().includes(this.searchTermVehicle.toLowerCase()))
     }  
   }
+
+  
 }
 

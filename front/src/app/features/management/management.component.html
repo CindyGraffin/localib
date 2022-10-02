@@ -40,7 +40,7 @@
                         <p>Aucune location ne correspond à la recherche effectuée.</p>
                     </div>
                     <div *ngFor="let renting of rentings">
-                        <app-renting-card [renting]="renting"></app-renting-card>
+                        <app-renting-card [renting]="renting" [rentingsList]="rentingsList"></app-renting-card>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCircleCheck, faEye, faFileLines, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { RentingsService } from '../../rentings/rentings.service';
 import { RentingPopulateType } from '../types/renting-populate.type';
 
 @Component({
@@ -18,10 +19,21 @@ export class RentingCardComponent implements OnInit {
   deleteRenting: boolean = false;
 
   @Input() renting!: RentingPopulateType;
+  @Input() rentingsList!: RentingPopulateType[];
 
-  constructor() { }
+  constructor(private rentingService: RentingsService) { }
 
   ngOnInit(): void {
+  }
+
+  changeDeleteRenting() {
+    this.deleteRenting = !this.deleteRenting
+  }
+
+  deleteLocationById(renting: RentingPopulateType) {
+    this.rentingService.deleteRentingById(renting.id!).subscribe(() => console.log('deleted'));
+    let rentingIndex = this.rentingsList!.indexOf(renting);
+    this.rentingsList!.splice(rentingIndex, 1);
   }
 
 }
