@@ -1,1 +1,24 @@
-<p>navbar works!</p>
+<div class="navbar__container">
+    <div class="navbar-title">
+        <p>MENU</p>
+    </div>
+    <div class="nav-items">
+        <div class="nav-item" (click)="navigateToRentings()" class="{{activePage === 'rentings' ? 'white' : 'blue'}}">
+            <p>Locations de véhicules</p>
+            <app-icon [icon]="keyIcon" class="navbar-icon"></app-icon>
+        </div>
+        <div class="nav-item" (click)="navigateToRentingsManagement()"
+            class="{{activePage === 'management' ? 'white' : 'blue'}}">
+            <p>Gestion des locations</p>
+            <app-icon [icon]="fileIcon" class="navbar-icon"></app-icon>
+        </div>
+        <div class="nav-item" (click)="navigateToVehicles()" class="{{activePage === 'vehicles' ? 'white' : 'blue'}}">
+            <p>Gestion des véhicules</p>
+            <app-icon [icon]="carIcon" class="navbar-icon"></app-icon>
+        </div>
+        <div class="nav-item" (click)="navigateToCustomers()" class="{{activePage === 'customers' ? 'white' : 'blue'}}">
+            <p>Gestion des locataires</p>
+            <app-icon [icon]="customerIcon" class="navbar-icon"></app-icon>
+        </div>
+    </div>
+</div>

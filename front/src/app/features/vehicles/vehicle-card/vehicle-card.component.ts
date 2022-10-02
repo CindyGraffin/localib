@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCircleCheck, faCircleXmark, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faPenToSquare, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Vehicle } from '../types/vehicule.type';
 
 @Component({
@@ -12,14 +12,21 @@ export class VehicleCardComponent {
 
   @Input() vehicle!: Vehicle;
   @Input() vehiclesList!: Vehicle[];
+  @Input() locationCard!: boolean;
+  @Input() startDate: Date | undefined;
+  @Input() endDate: Date | undefined;
 
   updateVehicle: boolean = false;
+  reserveVehicle: boolean = false;
 
   checkIcon: IconProp = faCircleCheck;
   editIcon: IconProp = faPenToSquare;
-  crossIcon: IconProp = faCircleXmark;
+  crossIcon: IconProp = faXmark;
 
   edit() {
     this.updateVehicle = !this.updateVehicle;
+  }
+  reserve() {
+    this.reserveVehicle = !this.reserveVehicle;
   }
 }

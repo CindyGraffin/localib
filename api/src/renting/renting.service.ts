@@ -32,7 +32,12 @@ export class RentingService {
   }
 
   async findAll(): Promise<RentingDto[]> {
-    const rentings = await this.rentingRepository.find();
+    const rentings = await this.rentingRepository.find({
+      relations: {
+        vehicle: true,
+        customer: true
+      }
+    });
     return rentings;
   }
 

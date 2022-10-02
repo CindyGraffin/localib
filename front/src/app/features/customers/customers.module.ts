@@ -23,7 +23,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ReactiveFormsModule,
     CustomerRoutingModule,
     SharedModule
-  ],
-  providers: [CustomersService]
+  ]
 })
 export class CustomersModule { }

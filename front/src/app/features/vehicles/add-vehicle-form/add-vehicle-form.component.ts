@@ -60,6 +60,7 @@ export class AddVehicleFormComponent  {
   onSubmit() {
     this.vehiclesList.unshift(this.addVehicle.value);
     this.vehicleService.addVehicle(this.addVehicle.value)
-                        .subscribe((vehicle: Vehicle) => console.table(vehicle));
+                        .subscribe();
+    this.addVehicle.reset();
   }
 }

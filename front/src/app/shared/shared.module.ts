@@ -9,6 +9,10 @@ import { ButtonComponent } from 'src/app/shared/button/button.component';
 import { BlueLightButtonDirective } from 'src/app/shared/button/directives/blue-light-button.directive';
 import { BlueButtonDirective } from 'src/app/shared/button/directives/blue-button.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { VehicleCardComponent } from '../features/vehicles/vehicle-card/vehicle-card.component';
+import { UpdateVehicleFormComponent } from '../features/vehicles/update-vehicle-form/update-vehicle-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RentingFormComponent } from '../features/rentings/renting-form/renting-form.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +23,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     IconComponent,
     NavbarComponent,
     SectionTitleComponent,
-    WhiteButtonDirective,  
+    UpdateVehicleFormComponent,
+    VehicleCardComponent,
+    WhiteButtonDirective,
+    RentingFormComponent
     ],
     imports: [
     CommonModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
     ],
     exports: [
     BlueButtonDirective,
@@ -33,7 +42,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     IconComponent,
     NavbarComponent,
     SectionTitleComponent,
+    UpdateVehicleFormComponent,
+    VehicleCardComponent,
     WhiteButtonDirective,
+    RentingFormComponent
     ]
 })
 export class SharedModule { }

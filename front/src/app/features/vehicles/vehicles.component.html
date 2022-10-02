@@ -1,7 +1,12 @@
 <router-outlet></router-outlet>
 <div class="layout__container">
     <div class="layout-left">
-        <img src="assets/images/localib-logo.png" />
+        <div class="logo">
+            <img src="assets/images/localib-logo.png" />
+        </div>
+        <div class="layout-navbar">
+            <app-navbar [activePage]="'vehicles'"></app-navbar>
+        </div>
     </div>
     <div class="layout-right">
         <div class="add-item__container">
@@ -17,7 +22,7 @@
                     <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
                     <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>
-                <div class="items__container">
+                <div class="items__container vehicle-cards">
                     <div class="no-results" *ngIf="vehiclesList.length === 0">
                         <p>Aucun véhicule enregistré. Remplissez le formulaire ci-dessus puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo; afin d'ajouter un véhicule.</p>
                     </div>
@@ -30,7 +35,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
