@@ -17,7 +17,7 @@
             </div>
           </div>
           <div class="renting-customer">
-            <div>
+            <div class="renting-title">
               <p class="info-title">Locataire :</p>
               <app-icon [icon]="eyeIcon" class="eye-icon"></app-icon>
             </div>
@@ -27,19 +27,18 @@
                 <span *ngIf="renting.customer.gender === 'Homme'">Mr.</span> 
                 {{renting.customer.lastName}} {{renting.customer.firstName}}
               </p>
-              <p>{{renting.vehicle.registrationNumber}}</p>
             </div>
           </div>
         </div>
         <div class="renting-right">
-          <div>
-            <p>Location n°<span>000356804</span></p>
-            <p>Du <span>{{renting.startDate | date:'dd/MM/YYYY'}}</span> au <span>{{renting.endDate |
+          <div class="right-section">
+            <p class="location-number">Location n°<span>000356804</span></p>
+            <p class="location-date">Du <span>{{renting.startDate | date:'dd/MM/YYYY'}}</span> au <span>{{renting.endDate |
                 date:'dd/MM/YYYY'}}</span></p>
           </div>
-          <div>
-            <p>Montant de la location:</p>
-            <p>{{renting.totalPrice}}€</p>
+          <div class="right-section">
+            <p class="price-title">Montant de la location:</p>
+            <p class="renting-price">{{renting.totalPrice}}€</p>
           </div>
         </div>
       </div>

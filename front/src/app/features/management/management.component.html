@@ -27,8 +27,8 @@
             <app-section-title [sectionTitle]="'Liste des locations'"></app-section-title>
             <div class="items-list">
                 <div class="results-actions">
-                    <input #searchBox class="form-control large" type="text" placeholder="Chercher par nom de locataire" (keyup)="searchRentingsByCustomer($event)">
-                    <input #searchBox class="form-control large" type="text" placeholder="Chercher par modèle/marque" (keyup)="searchRentingsByVehicle($event)">
+                    <input #searchBox class="form-control renting" type="text" placeholder="Chercher par nom de locataire" (keyup)="searchRentingsByCustomer($event)">
+                    <input #searchBox class="form-control renting" type="text" placeholder="Chercher par modèle/marque" (keyup)="searchRentingsByVehicle($event)">
                     <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
                     <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
                 </div>
