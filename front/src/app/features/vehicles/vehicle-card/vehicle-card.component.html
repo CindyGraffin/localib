@@ -28,11 +28,11 @@
           </app-button>
         </div>
         <div *ngIf="locationCard">
-          <app-button *ngIf="!reserveVehicle" (click)="reserve()" [buttonColor]="'blue'" [buttonSize]="'large'"
+          <app-button *ngIf="!reserveVehicle" (click)="reserve()" [buttonColor]="'blue'" [buttonSize]="'small'"
             [buttonText]="'Réserver pour un client'" [icon]="editIcon">
           </app-button>
           <app-button *ngIf="reserveVehicle" [buttonText]="'Annuler la réservation'" [buttonColor]="'blue'"
-            [icon]="crossIcon" [buttonSize]="'large'" (click)="reserve()">
+            [icon]="crossIcon" [buttonSize]="'small'" (click)="reserve()">
           </app-button>
         </div>
       </div>
@@ -43,6 +43,6 @@
     </app-update-vehicle-form>
   </div>
   <div class="update-vehicle" *ngIf="reserveVehicle">
-    <app-renting-form [vehicleId]="vehicle.id"></app-renting-form>
+    <app-renting-form [startDate]="startDate" [endDate]="endDate" [vehicleId]="vehicle.id" [vehicleDayPrice]="vehicle.dayPrice"></app-renting-form>
   </div>
 </div>

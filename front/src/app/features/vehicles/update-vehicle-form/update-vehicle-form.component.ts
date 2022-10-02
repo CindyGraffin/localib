@@ -42,7 +42,7 @@ export class UpdateVehicleFormComponent {
   }
 
   defDeleteVehicle(vehicle: Vehicle) {
-    this.vehicleService.deleteVehicleById(vehicle.id!).subscribe(() => console.log('deleted'));
+    this.vehicleService.deleteVehicleById(vehicle.id!).subscribe();
     let customerIndex = this.vehiclesList!.indexOf(vehicle);
     this.vehiclesList!.splice(customerIndex, 1);
   }

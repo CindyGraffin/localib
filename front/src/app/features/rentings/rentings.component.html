@@ -6,31 +6,57 @@
     <div class="layout-right">
         <div class="add-item__container">
             <app-section-title [sectionTitle]="'Locations de véhicules'"></app-section-title>
-            <p class="section-text">Remplissez les champs ci-dessous puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo;, pour ajouter le nouveau véhicule à la liste de ceux déjà existants.</p>
-            date input
+            <p class="section-text">Choisissez une date de début de location et une date de fin de location, puis
+                cliquer sur le bouton &laquo;Rechercher&raquo;, afin de visualiser la liste des différents véhicules
+                disponibles au cours de cette période.</p>
+            <div class="search-form__container">
+                <form #searchDates="ngForm" class="search-form" (ngSubmit)="searchVehiclesAvailables(startDate, endDate)">
+                    <app-icon [icon]="calendarIcon" class="calendar-icon"></app-icon>
+                    <label for="startDate">Du</label>
+                    <input type="date" id="startDate" name="startDate"
+                        value="{{startDate}}" [(ngModel)]="startDateTemp" required />
+                    <label for="startDate">au</label>
+                    <input type="date" id="endDate" name="endDate"
+                        value="{{endDate}}" [(ngModel)]="endDateTemp" required />
+                    <button type="submit" class="search-button" [disabled]="!searchDates.valid">
+                        <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Rechercher'" [icon]="searchIcon">
+                        </app-button>
+                    </button>
+                </form>
+            </div>
         </div>
         <div class="items-list__container">
             <app-section-title [sectionTitle]="'Liste des véhicules'"></app-section-title>
             <div class="items-list">
                 <div class="results-actions">
-                    <input #searchBox class="form-control location" type="text" placeholder="Chercher par modèle/marque" (keyup)="searchVehicles($event)">
-                    <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'" [icon]="filterIcon"></app-button>
-                    <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon"></app-button>
+                    <input #searchBox class="form-control location" type="text" placeholder="Chercher par modèle/marque"
+                        (keyup)="searchVehicles($event)">
+                    <app-button [buttonColor]="'white'" [buttonSize]="'small'" [buttonText]="'Filtrer'"
+                        [icon]="filterIcon"></app-button>
+                    <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Trier'" [icon]="sortIcon">
+                    </app-button>
                 </div>
                 <div class="items__container vehicle-cards">
                     <div class="no-results" *ngIf="vehiclesList.length === 0">
-                        <p>Aucun véhicule enregistré. Remplissez le formulaire ci-dessus puis cliquez sur le bouton &laquo;Ajouter un véhicule&raquo; afin d'ajouter un véhicule.</p>
+                        <p>Aucun véhicule existant. Remplissez le formulaire &laquo;Ajouter un véhicule&raquo; de la page &laquo;Gestion des véhicules&raquo; afin d'ajouter un véhicule.</p>
                     </div>
-                    <div class="no-results" *ngIf="vehicles.length === 0 && searchTerm !== ''">
+                    <div class="no-results" *ngIf="vehicles.length === 0 && startDate && endDate && searchTerm.length === 0">
+                        <p>Aucun véhicule n'est disponible au cours de la période demandée.</p>
+                    </div>
+                    <div class="no-results" *ngIf="vehicles.length === 0 && startDate && endDate && searchTerm.length > 0">
                         <p>Aucun véhicule ne correspond à la recherche effectuée.</p>
                     </div>
-                    <div *ngFor="let vehicle of vehicles">
-                        <app-vehicle-card [locationCard]="true" [vehicle]="vehicle" [vehiclesList]="vehiclesList"></app-vehicle-card>
+                    <div *ngIf="startDate && endDate">
+                        <div *ngFor="let vehicle of vehicles">
+                            <app-vehicle-card [locationCard]="true" [vehicle]="vehicle" [vehiclesList]="vehiclesList" [startDate]="startDate" [endDate]="endDate">
+                            </app-vehicle-card>
+                        </div>
                     </div>
+                </div>
+                <div *ngIf="(!startDate || !endDate) && vehiclesList.length > 0" class="no-dates">
+                    <p>Merci de bien vouloir renseigner les dates de la période de location afin d'afficher la liste des véhicules disponibles au cours de cette période.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-

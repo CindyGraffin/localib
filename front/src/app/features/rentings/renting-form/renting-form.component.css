@@ -1,0 +1,44 @@
+.search-customer-form {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+}
+.select-customer {
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+    display: flex;
+    column-gap: 0.8rem;
+    align-items: center;
+}
+.select-customer label {
+    font-family: 'Exo';
+    font-size: 0.9rem;
+    text-decoration: underline;
+}
+.form-control.dropdown {
+    width: 11.5rem;
+    height: 1.7rem;
+    padding: 0rem 0.3rem;
+}
+.submit-form.search {
+    margin-bottom: 0.5rem;
+}
+.success-location {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    column-gap: 0.5rem;
+}
+.success-location p {
+    font-family: 'Exo';
+    font-size: 0.8rem;
+}
+.success-location p span {
+    font-weight: 600;
+    font-family: 'Exo';
+    font-size: 1rem;
+}
+.success-location .success-icon {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}

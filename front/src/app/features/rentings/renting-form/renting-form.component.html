@@ -1,30 +1,26 @@
-<div class="search-customr">
-    <!-- <form #addRenting="ngForm" (ngSubmit)="createRenting(customer)">
-        <div>
-            <label for="rentingCustomer"></label>
-            <select class="form-control dropdown" id="vehicleState" name="vehicleState"
-                [(ngModel)]="vehicle.vehicleState">
-                <option value="" disabled selected>Choisir un locataire</option>
-                <option *ngFor="let vehicleState of vehicleStates">
-                    {{ vehicleState }}
+<div class="search-customer">
+    <form #searchCustomer="ngForm" (ngSubmit)="createRenting()" class="search-customer-form">
+        <div class="select-customer">
+            <label for="rentingCustomer">Choisir un locataire:</label>
+            <select class="form-control dropdown" id="vehicleState" name="vehicleState" (change)="changeCustomerId($event)"
+                [(ngModel)]="customerId">
+                <!-- <option value="" disabled selected>Choisir un locataire</option> -->
+                <option *ngFor="let customer of customersList" value="{{customer.id}}" >
+                    {{ customer.firstName + ' ' + customer.lastName}}
                 </option>
             </select>
         </div>
-        <div class="submit-form-edit">
+        <div class="submit-form search">
             <div class="button-submit__container vehicle">
-                <button type="submit" [disabled]="!editVehicule.valid" class="edit-vehicle-btn">
+                <button type="submit" [disabled]="!searchCustomer.valid" class="edit-vehicle-btn">
                     <app-icon [icon]="validateIcon"></app-icon>
-                    Valider les modifications
+                    Enregistrer la location
                 </button>
-                <div class="delete-vehicle-btns">
-                    <app-button *ngIf="!deleteVehicle" (click)="changeDeleteVehicle()" [buttonColor]="'white'"
-                        [buttonSize]="'large'" [buttonText]="'Supprimer le véhicule'" [icon]="deleteIcon"></app-button>
-                    <app-button *ngIf="deleteVehicle" [buttonColor]="'white'" [buttonSize]="'large'"
-                        [buttonText]="'Confirmer la suppression'" [icon]="validateIcon"
-                        (click)="defDeleteVehicle(vehicle)">
-                    </app-button>
-                </div>
             </div>
         </div>
-    </form> -->
+    </form>
+    <div *ngIf="successLocation" class="success-location">
+        <app-icon [icon]="validateIcon" class="success-icon"></app-icon>
+        <p><span>Location créée avec succès !</span> Vous allez être redirigé vers la page de gestion des locations.</p>
+    </div>
 </div>

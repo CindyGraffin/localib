@@ -13,6 +13,8 @@ export class VehicleCardComponent {
   @Input() vehicle!: Vehicle;
   @Input() vehiclesList!: Vehicle[];
   @Input() locationCard!: boolean;
+  @Input() startDate: Date | undefined;
+  @Input() endDate: Date | undefined;
 
   updateVehicle: boolean = false;
   reserveVehicle: boolean = false;
