@@ -1,0 +1,26 @@
+<div class="search-customer">
+    <form #searchCustomer="ngForm" (ngSubmit)="createRenting()" class="search-customer-form">
+        <div class="select-customer">
+            <label for="rentingCustomer">Choisir un locataire:</label>
+            <select class="form-control dropdown" id="vehicleState" name="vehicleState" (change)="changeCustomerId($event)"
+                [(ngModel)]="customerId">
+                <!-- <option value="" disabled selected>Choisir un locataire</option> -->
+                <option *ngFor="let customer of customersList" value="{{customer.id}}" >
+                    {{ customer.firstName + ' ' + customer.lastName}}
+                </option>
+            </select>
+        </div>
+        <div class="submit-form search">
+            <div class="button-submit__container vehicle">
+                <button type="submit" [disabled]="!searchCustomer.valid" class="edit-vehicle-btn">
+                    <app-icon [icon]="validateIcon"></app-icon>
+                    Enregistrer la location
+                </button>
+            </div>
+        </div>
+    </form>
+    <div *ngIf="successLocation" class="success-location">
+        <app-icon [icon]="validateIcon" class="success-icon"></app-icon>
+        <p><span>Location créée avec succès !</span> Vous allez être redirigé vers la page de gestion des locations.</p>
+    </div>
+</div>

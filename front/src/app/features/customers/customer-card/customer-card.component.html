@@ -1,0 +1,72 @@
+<div class="card">
+  <div class="customer-card__container">
+    <div class="customer-card-infos">
+      <div class="customer-name">
+        <p>
+          {{ customer.gender === "Femme" ? "Mme." : "Mr." }}
+          <span>{{ customer.lastName }} {{ customer.firstName }}</span>
+        </p>
+      </div>
+      <div class="customer-info">
+        <app-icon class="customer-info-icon" [icon]="phoneIcon"></app-icon>
+        <p>{{ customer.phone }}</p>
+      </div>
+      <div class="customer-info">
+        <app-icon class="customer-info-icon" [icon]="emailIcon"></app-icon>
+        {{ customer.email }}
+      </div>
+      <div class="customer-info">
+        <app-icon [icon]="birthdayIcon" class="customer-info-icon"></app-icon>
+        <p>Né le {{ customer.dateOfBirth | date: "d/M/yyyy" }}</p>
+      </div>
+    </div>
+    <div class="customer-card-buttons">
+      <app-button
+        *ngIf="!deleteCustomer"
+        [buttonText]="'Supprimer un locataire'"
+        [buttonColor]="'light-blue'"
+        [icon]="deleteIcon"
+        [buttonSize]="'large'"
+        (click)="changeDeleteCustomer()"
+      >
+      </app-button>
+      <div *ngIf="deleteCustomer" class="confirm-delete">
+        <app-button 
+        [buttonText]="'Confirmer la suppresion'"
+        [buttonColor]="'light-blue'"
+        [icon]="checkIcon"
+        [buttonSize]="'large'"
+        (click)="defDeleteCustomer(customer)"
+        >
+        </app-button>
+        <app-button
+          [buttonText]="'Annuler'"
+          [buttonColor]="'light-blue'"
+          [icon]="crossIcon"
+          [buttonSize]="'small'"
+          (click)="changeDeleteCustomer()"
+        >
+      </app-button>
+      </div>
+      <app-button *ngIf="!updateCustomer"
+        [buttonText]="'Modifier les informations'"
+        [buttonColor]="'blue'"
+        [icon]="editIcon"
+        [buttonSize]="'large'"
+        (click)="edit()"
+      >
+      </app-button>
+      <app-button *ngIf="updateCustomer"
+        [buttonText]="'Annuler les modifications'"
+        [buttonColor]="'blue'"
+        [icon]="crossIcon"
+        [buttonSize]="'large'"
+        (click)="edit()"
+      >
+      </app-button>
+    </div>
+  </div>
+  <div class="update-customer" *ngIf="updateCustomer">
+    <app-update-customer-form (toggleEditEvent)="edit()" [customer]="customer"></app-update-customer-form>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.renting-card__container {
+    display: flex;
+    column-gap: 0.5rem;
+    background-color: var(--color-white);
+    padding: 0.20rem;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow-bold-card);
+    width: 38.5rem;
+    margin-top: 1.4rem;
+}
+.info-title {
+    font-weight: 600;
+}
+.eye-icon {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+.renting-title {
+    display: flex;
+    column-gap: 0.4rem;
+}
+.renting-infos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.renting-main {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0.35rem;
+
+}
+.renting-right {
+    height: 7.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.renting-btns {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 0.3rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+.right-section p {
+    font-family: 'Exo';
+}
+.location-number {
+    font-weight: 600;
+}
+.location-number span {
+    color: var(--color-primary);
+}
+.location-date,
+.price-title {
+    font-size: 0.8rem;
+}
+.location-date span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.renting-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+}

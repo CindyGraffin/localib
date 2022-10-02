@@ -1,0 +1,1 @@
+export type GenderType = 'Homme' | 'Femme';

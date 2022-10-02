@@ -1,0 +1,6 @@
+.env
+.database.env
+*/.env
+/node_modules
+database.env
+node_modules

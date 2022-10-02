@@ -1,0 +1,88 @@
+<div class="form__container">
+  <form #editCustomer="ngForm" (ngSubmit)="updateCustomerInfos(customer)">
+    <div class="form-inputs edit">
+      <div>
+        <label for="firstName"></label>
+        <input
+          class="form-control"
+          type="text"
+          id="firstName"
+          name="firstName"
+          [defaultValue]="customer.firstName"
+          [(ngModel)]="customer.firstName"
+          required
+          pattern="^[a-zA-Z0-9àéèçùàïüöû]{1,25}$"
+        />
+      </div>
+      <div>
+        <input
+          class="form-control"
+          type="text"
+          id="lastName"
+          name="lastName"
+          [defaultValue]="customer.lastName"
+          [(ngModel)]="customer.lastName"
+          required
+          pattern="^[a-zA-Z0-9àéèçùàïüöû]{1,25}$"
+        />
+      </div>
+      <div>
+        <input
+          class="form-control"
+          type="email"
+          id="email"
+          name="email"
+          [defaultValue]="customer.email"
+          [(ngModel)]="customer.email"
+          required
+        />
+      </div>
+      <div>
+        <input
+          class="form-control"
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="^[0-9]*$"
+          [defaultValue]="customer.phone"
+          [(ngModel)]="customer.phone"
+          required
+        />
+      </div>
+      <div class="form-item">
+        <label for="dateOfBirth"></label>
+        <input 
+          class="form-control" 
+          type="date" 
+          id="dateOfBirth" 
+          name="dateOfBirth"
+          value="{{customer.dateOfBirth}}"
+          [(ngModel)]="customer.dateOfBirth"
+          required
+        />
+      </div>
+      <div>
+        <label for="gender"></label>
+          <select
+            class="select-gender"
+            id="gender"
+            name="gender"
+            [(ngModel)]="customer.gender"
+          >
+          <option value="" disabled selected >Sexe</option>
+          <option *ngFor="let gender of genders"  >
+              {{ gender }}
+            </option>
+          </select>
+      </div>
+    </div>
+    <div class="submit-form-edit">
+      <div class="button-submit__container">
+        <button type="submit" [disabled]="!editCustomer.valid">
+          <app-icon [icon]="validateIcon"></app-icon>
+          Valider les modifications
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

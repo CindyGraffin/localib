@@ -1,0 +1,1 @@
+export type VehicleStateType = 'A' | 'B' | 'C' | 'D';

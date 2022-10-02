@@ -1,0 +1,66 @@
+<div class="form__container">
+  <form #editVehicule="ngForm" (ngSubmit)="updateVehicleInfos(vehicle)">
+    <div class="form-inputs edit">
+      <div class="form-group-vehicle">
+        <div>
+          <label for="vehicleModel"></label>
+          <input class="form-control" type="text" id="vehicleModel" name="vehicleModel"
+            [defaultValue]="vehicle.vehicleModel" [(ngModel)]="vehicle.vehicleModel" required
+            pattern="^[a-zA-Z0-9àéèçùàïüöû ]{1,25}$" />
+        </div>
+        <div>
+          <label for="brand"></label>
+          <input class="form-control" type="text" id="brand" name="brand" [defaultValue]="vehicle.brand"
+            [(ngModel)]="vehicle.brand" required pattern="^[a-zA-Z0-9àéèçùàïüöû ]{1,25}$" />
+        </div>
+      </div>
+      <div class="form-group-vehicle">
+        <div>
+          <label for="registrationNumber"></label>
+          <input class="form-control" type="text" id="registrationNumber" name="registrationNumber"
+            [defaultValue]="vehicle.registrationNumber" [(ngModel)]="vehicle.registrationNumber" required />
+        </div>
+        <div>
+          <label for="dayPrice"></label>
+          <input class="form-control" type="number" id="dayPrice" name="dayPrice" pattern="^[0-9]*$"
+            [defaultValue]="vehicle.dayPrice" [(ngModel)]="vehicle.dayPrice" required />
+        </div>
+      </div>
+      <div class="form-group-vehicle">
+        <div>
+          <label for="vehicleType"></label>
+          <select class="form-control dropdown" id="vehicleType" name="vehicleType" [(ngModel)]="vehicle.vehicleType">
+            <option value="" disabled selected>Catégorie</option>
+            <option *ngFor="let vehicleType of vehicleTypes">
+              {{ vehicleType }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label for="vehicleState"></label>
+          <select class="form-control dropdown" id="vehicleState" name="vehicleState" [(ngModel)]="vehicle.vehicleState">
+            <option value="" disabled selected>Etat</option>
+            <option *ngFor="let vehicleState of vehicleStates">
+              {{ vehicleState }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="submit-form-edit">
+      <div class="button-submit__container vehicle">
+        <button type="submit" [disabled]="!editVehicule.valid" class="edit-vehicle-btn">
+          <app-icon [icon]="validateIcon"></app-icon>
+          Valider les modifications
+        </button>
+        <div class="delete-vehicle-btns">
+          <app-button *ngIf="!deleteVehicle" (click)="changeDeleteVehicle()" [buttonColor]="'white'"
+            [buttonSize]="'large'" [buttonText]="'Supprimer le véhicule'" [icon]="deleteIcon"></app-button>
+          <app-button *ngIf="deleteVehicle" [buttonColor]="'white'" [buttonSize]="'large'"
+            [buttonText]="'Confirmer la suppression'" [icon]="validateIcon" (click)="defDeleteVehicle(vehicle)">
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

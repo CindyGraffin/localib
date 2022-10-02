@@ -1,0 +1,89 @@
+<div class="form__container">
+    <form [formGroup]="addVehicle" (ngSubmit)="onSubmit()">
+      <div class="form-inputs">
+        <div class="form-group name">
+          <div class="form-item">
+            <label for="vehicleModel"></label>
+            <input
+              placeholder="Modèle"
+              class="form-control"
+              type="text"
+              id="vehicleModel"
+              formControlName="vehicleModel"
+            />
+          </div>
+          <div class="form-item">
+            <label for="brand"></label>
+            <input
+              placeholder="Marque"
+              class="form-control"
+              type="text"
+              id="brand"
+              formControlName="brand"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-item">
+            <label for="registrationNumber"></label>
+            <input
+              placeholder="Immatriculation"
+              class="form-control large"
+              type="text"
+              id="registrationNumber"
+              formControlName="registrationNumber"
+            />
+          </div>
+          <div class="form-item">
+            <label for="dayPrice"></label>
+            <input
+              placeholder="Prix à la journée"
+              class="form-control large"
+              type="number"
+              id="dayPrice"
+              formControlName="dayPrice"
+            />
+          </div>
+        </div>
+        <div class="form-group date">
+          <div class="form-item">
+            <label for="vehicleType"></label>
+            <select
+              class="form-control"
+              type="vehicleType"
+              id="vehicleType"
+              formControlName="vehicleType"
+            >
+              <option value="" disabled selected>Type</option>
+              <option *ngFor="let type of types">
+                {{ type }}
+              </option>
+            </select>
+          </div>
+          <div class="form-item">
+            <label for="vehicleState"></label>
+            <select
+              class="form-control"
+              type="vehicleState"
+              id="vehicleState"
+              formControlName="vehicleState"
+            >
+              <option value="" disabled selected>Catégorie</option>
+              <option *ngFor="let state of states">
+                {{ state }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="submit-form">
+        <div class="button-submit__container">
+          <button type="submit" [disabled]="!addVehicle.valid">
+            <app-icon [icon]="plusIcon"></app-icon>
+            Ajouter un véhicule
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  
