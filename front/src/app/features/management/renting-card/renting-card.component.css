@@ -8,3 +8,25 @@
     width: 38.5rem;
     margin-top: 1.4rem;
 }
+.info-title {
+    font-weight: 600;
+}
+.eye-icon {
+    color: var(--color-primary);
+    cursor: pointer;
+}
+.renting-title {
+    display: flex;
+    column-gap: 0.4rem;
+}
+.renting-infos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.renting-btns {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 0.3rem;
+}

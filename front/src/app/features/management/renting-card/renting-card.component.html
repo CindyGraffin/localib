@@ -1,17 +1,55 @@
 <div class="card-renting">
-    <div class="renting-card__container">
-      <div class="card-img">
-        <img src="assets/images/fiat500.jpg" alt="">
-      </div>
-      <div class="renting-infos">
-        <div>
-
-        </div>
-        <div class="renting-btns">
-          <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Voir la facture'" [icon]="invoiceIcon"></app-button>
-          <app-button [buttonColor]="'light-blue'" [buttonSize]="'small'" [buttonText]="'Supprimer la location'" [icon]="deleteIcon"></app-button>
-        </div>
-      </div>
-      
+  <div class="renting-card__container">
+    <div class="card-img">
+      <img src="assets/images/fiat500.jpg" alt="">
     </div>
+    <div class="renting-infos">
+      <div class="renting-main">
+        <div class="renting-left">
+          <div class="renting-vehicle">
+            <div class="renting-title">
+              <p class="info-title">Véhicule :</p>
+              <app-icon [icon]="eyeIcon" class="eye-icon"></app-icon>
+            </div>
+            <div>
+              <p>{{renting.vehicle.vehicleModel}}</p>
+              <p>{{renting.vehicle.registrationNumber}}</p>
+            </div>
+          </div>
+          <div class="renting-customer">
+            <div>
+              <p class="info-title">Locataire :</p>
+              <app-icon [icon]="eyeIcon" class="eye-icon"></app-icon>
+            </div>
+            <div>
+              <p>
+                <span *ngIf="renting.customer.gender === 'Femme'">Mme.</span> 
+                <span *ngIf="renting.customer.gender === 'Homme'">Mr.</span> 
+                {{renting.customer.lastName}} {{renting.customer.firstName}}
+              </p>
+              <p>{{renting.vehicle.registrationNumber}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="renting-right">
+          <div>
+            <p>Location n°<span>000356804</span></p>
+            <p>Du <span>{{renting.startDate | date:'dd/MM/YYYY'}}</span> au <span>{{renting.endDate |
+                date:'dd/MM/YYYY'}}</span></p>
+          </div>
+          <div>
+            <p>Montant de la location:</p>
+            <p>{{renting.totalPrice}}€</p>
+          </div>
+        </div>
+      </div>
+      <div class="renting-btns">
+        <app-button [buttonColor]="'blue'" [buttonSize]="'small'" [buttonText]="'Voir la facture'" [icon]="invoiceIcon">
+        </app-button>
+        <app-button [buttonColor]="'light-blue'" [buttonSize]="'small'" [buttonText]="'Supprimer la location'"
+          [icon]="deleteIcon"></app-button>
+      </div>
+    </div>
+
   </div>
+</div>

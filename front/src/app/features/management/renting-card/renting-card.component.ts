@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCircleCheck, faFileLines, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faEye, faFileLines, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { RentingPopulateType } from '../types/renting-populate.type';
 
 @Component({
@@ -13,6 +13,7 @@ export class RentingCardComponent implements OnInit {
   validateIcon: IconProp = faCircleCheck;
   deleteIcon: IconProp = faTrashCan;
   invoiceIcon: IconProp = faFileLines;
+  eyeIcon: IconProp = faEye;
 
   deleteRenting: boolean = false;
 
