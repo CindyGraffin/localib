@@ -2,11 +2,8 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { RentingsComponent } from "./rentings.component";
 
-
 const routes: Routes = [
-    { path: "rentings", children: [
-        {path: '', component: RentingsComponent}
-    ]}
+    { path: "rentings", component: RentingsComponent}
 ];
 
 @NgModule({

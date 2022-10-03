@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCalendarDays, faCheck, faEnvelope, faPenToSquare, faPhone, faTrashCan, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { deleteItemFromArray } from 'src/app/utils/utils';
 import { CustomersService } from '../customers.service';
 import { Customer } from '../types/customer.type';
 
@@ -14,7 +15,7 @@ export class CustomerCardComponent  {
   constructor(private customersService: CustomersService) {}
 
   @Input() customer!: Customer;
-  @Input() customersList!: Customer[] | undefined;
+  @Input() customersList!: Customer[];
 
   updateCustomer: boolean = false;
   deleteCustomer: boolean = false;
@@ -32,9 +33,8 @@ export class CustomerCardComponent  {
   }
 
   defDeleteCustomer(customer: Customer) {
-    this.customersService.deleteCustomerById(customer.id!).subscribe(() => console.log('deleted'));
-    let customerIndex = this.customersList!.indexOf(customer);
-    this.customersList!.splice(customerIndex, 1);
+    this.customersService.deleteCustomerById(customer.id!).subscribe();
+    deleteItemFromArray(this.customersList, customer)
   }
 
   edit() {

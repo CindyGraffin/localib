@@ -33,7 +33,6 @@ export class RentingFormComponent implements OnInit {
 
   changeCustomerId(event: Event) {
     this.customerId = (event.target as HTMLInputElement).value;
-    
   }
 
   createRenting() {
@@ -47,13 +46,13 @@ export class RentingFormComponent implements OnInit {
       vehicleId: this.vehicleId,
       totalPrice: this.vehicleDayPrice! * diffDays
     }
-    this.rentingService.addRenting(renting).subscribe(() => console.log('created'));
+    this.rentingService.addRenting(renting).subscribe();
     this.startDate = undefined;
     this.endDate = undefined;
     this.successLocation = true;
     setTimeout(() => {
       this.navigateToLocationsManagement()
-    }, 3500)
+    }, 3000)
   }
 
   navigateToLocationsManagement() {

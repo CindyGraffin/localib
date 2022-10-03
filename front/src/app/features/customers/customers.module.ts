@@ -5,10 +5,8 @@ import { CustomerCardComponent } from './customer-card/customer-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomersComponent } from './customers.component';
 import { CustomerRoutingModule } from './customers-routing.module';
-import { CustomersService } from './customers.service';
 import { UpdateCustomerFormComponent } from './update-customer-form/update-customer-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-
 
 @NgModule({
   declarations: [

@@ -18,6 +18,7 @@ export class AddCustomerFormComponent  {
   @Input() addForm!: boolean;
 
   genders: GenderType[] = ['Homme', 'Femme'];
+  
   plusIcon: IconProp = faCirclePlus;
 
   addCustomer = new FormGroup({
@@ -54,7 +55,7 @@ export class AddCustomerFormComponent  {
   onSubmit() {
     this.customersList.unshift(this.addCustomer.value);
     this.customerService.addCustomer(this.addCustomer.value)
-                        .subscribe((customer) => console.table(customer));
+                        .subscribe();
     this.addCustomer.reset(); 
   }
 }
