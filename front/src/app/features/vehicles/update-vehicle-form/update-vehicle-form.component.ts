@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCircleCheck, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { deleteItemFromArray } from 'src/app/utils/utils';
 import { VehicleStateType } from '../types/state.type';
 import { VehicleType } from '../types/vehicle-type.type';
 import { Vehicle } from '../types/vehicule.type';
@@ -43,7 +44,6 @@ export class UpdateVehicleFormComponent {
 
   defDeleteVehicle(vehicle: Vehicle) {
     this.vehicleService.deleteVehicleById(vehicle.id!).subscribe();
-    let customerIndex = this.vehiclesList!.indexOf(vehicle);
-    this.vehiclesList!.splice(customerIndex, 1);
+    deleteItemFromArray(this.vehiclesList, vehicle)
   }
 }

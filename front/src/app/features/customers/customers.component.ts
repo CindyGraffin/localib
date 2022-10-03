@@ -19,7 +19,6 @@ export class CustomersComponent implements OnInit {
   filterIcon: IconProp = faFilter;
   sortIcon: IconProp = faFolder;
 
-
   constructor(private customerService: CustomersService) {}
 
   ngOnInit(): void {
@@ -32,8 +31,11 @@ export class CustomersComponent implements OnInit {
     if (this.searchTerm === '') {
       this.customers = this.customersList;
     } else {
-      this.customers = this.customersList.filter((customer: Customer) => (customer.firstName + ' ' + customer.lastName).toLowerCase().includes(this.searchTerm.toLowerCase()) || (customer.lastName + ' ' + customer.firstName).toLowerCase().includes(this.searchTerm.toLowerCase()));
+      this.customers = this.filterCustomersList(this.customersList);
     }  
   }
 
+  filterCustomersList(customersList: Customer[]) {
+    return customersList.filter((customer: Customer) => (customer.firstName + ' ' + customer.lastName).toLowerCase().includes(this.searchTerm.toLowerCase()) || (customer.lastName + ' ' + customer.firstName).toLowerCase().includes(this.searchTerm.toLowerCase()));
+  }
 }

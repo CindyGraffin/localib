@@ -25,12 +25,16 @@ export class VehiclesComponent implements OnInit {
                         .subscribe((vehiclesList) => (this.vehiclesList = vehiclesList, this.vehicles = vehiclesList));
   }
 
-  searchVehicles(event: KeyboardEvent) {
+  filterVehiclesList(vehiclesList: Vehicle[]) {
+    return vehiclesList.filter((vehicle: Vehicle) => vehicle.vehicleModel.toLowerCase().includes(this.searchTerm.toLowerCase()) || vehicle.brand.toLowerCase().includes(this.searchTerm.toLowerCase()) ||  (vehicle.brand + ' ' + vehicle.vehicleModel).toLowerCase().includes(this.searchTerm.toLowerCase()) ||  (vehicle.vehicleModel + ' ' + vehicle.brand).toLowerCase().includes(this.searchTerm.toLowerCase()))
+  }
+
+  searchVehicles(event: KeyboardEvent): void {
     this.searchTerm = (event.target as HTMLInputElement).value;
     if (this.searchTerm === '') {
       this.vehicles = this.vehiclesList;
     } else {
-      this.vehicles = this.vehiclesList.filter((vehicle: Vehicle) => vehicle.vehicleModel.toLowerCase().includes(this.searchTerm.toLowerCase()) || vehicle.brand.toLowerCase().includes(this.searchTerm.toLowerCase()) ||  (vehicle.brand + ' ' + vehicle.vehicleModel).toLowerCase().includes(this.searchTerm.toLowerCase()) ||  (vehicle.vehicleModel + ' ' + vehicle.brand).toLowerCase().includes(this.searchTerm.toLowerCase()));
+      this.vehicles = this.filterVehiclesList(this.vehiclesList);
     }  
   }
 
